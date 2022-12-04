@@ -1,0 +1,90 @@
+body {
+    background-color: #F4F4FF;
+}
+
+.container {
+    text-align: center;
+    min-height: calc(100vh - 45px);
+}
+
+.starPicture {
+    max-height: 60vh;
+    max-width: 80vw;
+    border-radius: 10px;
+    object-fit: contain;
+    border: 1px solid rgba(0,0,0,0);
+}
+
+.starPicture:hover {
+    cursor: pointer;
+    border: 1px solid #777;
+}
+
+.mainPicture {
+    max-height: 75vh;
+    border-radius: 10px;
+    object-fit: contain;
+    border: 1px solid rgba(0,0,0,0);
+}
+
+.mainPicture:hover {
+    cursor: pointer;
+    border: 1px solid #777;
+}
+
+.starPictureButton, .galleryPictureButton {
+    border: 0;
+    background-color: rgba(0,0,0,0);
+}
+
+.starVideo {
+    width: 960px;
+    height: 540px;
+}
+
+.starExplanation {
+    padding: 0 10%;
+}
+
+footer {
+    margin-left: 10px;
+    font-style: italic;
+    font-size: smaller;
+}
+
+.navButton {
+    min-width: 100px;
+    height: 40px;
+    background-color: blue;
+    border-radius: 25px;
+    border-width: 0;
+    color: #F4F4FF;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.galleryContainer {
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    width: 80vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 1%;
+    row-gap: 1%;
+    justify-items: center;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.galleryCard {
+    width: 350px;
+    border: 1px solid rgba(0,0,0,0);
+    border-radius: 10px;
+}
+
+.galleryCard:hover {
+    cursor: pointer;
+    border: 1px solid #777;
+}
