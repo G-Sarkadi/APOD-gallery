@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import FormatedDate from "../FormatedDate";
-import Credits from "./Credits";
+import Credits from "../Credits";
 import Picture from "../Picture";
 
 const Card = ({ date }) => {
@@ -36,9 +36,9 @@ const Card = ({ date }) => {
                 <FormatedDate date={date} />
             </p>
             <Picture starData={starData} className={"mainPicture"} />
-            <h4>
+            <div className="pictureTitle">
                 {starData.title}
-            </h4>
+            </div>
             <Credits starData={starData} />
             <p className="starExplanation">
                 <strong>Explanation: </strong>{starData.explanation}

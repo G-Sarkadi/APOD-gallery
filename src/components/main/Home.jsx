@@ -15,14 +15,14 @@ const Home = () => {
     const today = calculateToday();
 
     document.title = 'Astronomy Picture of the Day'
-    
+
     return (
         <>
             <div className="container">
                 <h1>Astronomy Picture of the Day</h1>
                 <DateInput selectedDate={selectedDate} today={today} setSelectedDate={setSelectedDate} />
                 <Card date={selectedDate ?? today} />
-                <NavButton text={"Go to Gallery"} route="/gallery"/>
+                <NavButton text={"Go to Gallery"} route="/gallery" />
             </div>
             <Footer />
         </>

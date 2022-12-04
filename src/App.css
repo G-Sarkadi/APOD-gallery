@@ -8,7 +8,7 @@ body {
 }
 
 .starPicture {
-    max-height: 60vh;
+    max-height: 55vh;
     max-width: 80vw;
     border-radius: 10px;
     object-fit: contain;
@@ -32,6 +32,13 @@ body {
     border: 1px solid #777;
 }
 
+.pictureTitle {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
 .starPictureButton, .galleryPictureButton {
     border: 0;
     background-color: rgba(0,0,0,0);
@@ -44,6 +51,13 @@ body {
 
 .starExplanation {
     padding: 0 10%;
+}
+
+.imageCredit {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-size: 0.9rem;
+    font-style: italic;
 }
 
 footer {

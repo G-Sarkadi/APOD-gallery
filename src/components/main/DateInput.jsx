@@ -12,7 +12,7 @@ const DateInput = ({ selectedDate, today, setSelectedDate }) => {
         if (dateArr[2] < 10) {
             dateArr[2] = '0' + dateArr[2];
         }
-       return dateArr.join('-')
+        return dateArr.join('-')
     }
 
     return (

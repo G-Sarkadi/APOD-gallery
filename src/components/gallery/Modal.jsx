@@ -3,6 +3,7 @@ import FormatedDate from "../FormatedDate";
 import "./Modal.css";
 import Picture from "../Picture";
 import ReactDom from 'react-dom'
+import Credits from "../Credits";
 
 function Modal({ setOpenModal, modalContent }) {
     return ReactDom.createPortal(
@@ -27,6 +28,7 @@ function Modal({ setOpenModal, modalContent }) {
                 </div>
                 <div className="body">
                     <Picture starData={modalContent} className={"starPicture"} />
+                    <Credits starData={modalContent} />
                     <p className="explanation">{modalContent.explanation}</p>
                 </div>
                 <div className="footer">
