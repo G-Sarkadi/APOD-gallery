@@ -1,10 +1,16 @@
+:root {
+    --btn-hue: 200;
+    --btn-sat: 50%;
+    --btn-light: 50%;
+}
+
 body {
+    font-family: 'Open Sans', sans-serif;
     background-color: #F4F4FF;
 }
 
 .container {
     text-align: center;
-    min-height: calc(100vh - 45px);
 }
 
 .starPicture {
@@ -12,7 +18,7 @@ body {
     max-width: 80vw;
     border-radius: 10px;
     object-fit: contain;
-    border: 1px solid rgba(0,0,0,0);
+    border: 1px solid rgba(0, 0, 0, 0);
 }
 
 .starPicture:hover {
@@ -24,7 +30,7 @@ body {
     max-height: 75vh;
     border-radius: 10px;
     object-fit: contain;
-    border: 1px solid rgba(0,0,0,0);
+    border: 1px solid rgba(0, 0, 0, 0);
 }
 
 .mainPicture:hover {
@@ -39,9 +45,9 @@ body {
     margin-bottom: 1vh;
 }
 
-.starPictureButton, .galleryPictureButton {
+.starPictureButton {
     border: 0;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .starVideo {
@@ -66,39 +72,135 @@ footer {
     font-size: smaller;
 }
 
-.navButton {
-    min-width: 100px;
-    height: 40px;
-    background-color: blue;
-    border-radius: 25px;
-    border-width: 0;
+.btn {
+    background-color: hsl(var(--btn-hue), var(--btn-sat), var(--btn-light));
+    border-radius: 0.75em;
+    border: none;
     color: #F4F4FF;
     cursor: pointer;
-    padding: 10px;
+    padding: .5em .75em;
+    font-size: 1rem;
     font-weight: bold;
+}
+
+.btn + .btn {
+    margin-left: .5rem;
+}
+
+.btn:hover {
+    --btn-light: 40%
 }
 
 .galleryContainer {
     display: grid;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 100px;
-    width: 80vw;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 1%;
-    row-gap: 1%;
-    justify-items: center;
-    justify-content: stretch;
-    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1rem;
+    align-items: flex-start;
+    margin: 0 3vw 2vh 3vw;
 }
 
 .galleryCard {
-    width: 350px;
-    border: 1px solid rgba(0,0,0,0);
-    border-radius: 10px;
+    background: white;
+    border-radius: 0.25rem;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .2);
+    overflow: hidden;
 }
 
-.galleryCard:hover {
+.galleryCardPicture {
+    padding-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+.galleryCardPicture:hover {
     cursor: pointer;
-    border: 1px solid #777;
+}
+
+.galleryCardPicture > img {
+    display: block;
+    width: 100%;
+    max-height: 400px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+    transition: 200ms transform ease-in-out;
+}
+
+.galleryCard:hover > .galleryCardPicture > img {
+    transform: scale(1.025);
+}
+
+.galleryCardFooter {
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-weight: bold;
+}
+
+.modalBackground {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-color: rgba(200, 200, 200, 0.5);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContainer {
+    max-width: 95%;
+    max-height: 95%;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.modalContainer .title {
+    display: inline-block;
+    text-align: center;
+}
+
+.titleCloseBtn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.explanation {
+    margin-top: 0;
+}
+
+.modalContainer .body {
+    flex: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.modalContainer .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContainer .footer button {
+    background-color: white;
+    color:hsl(var(--btn-hue), var(--btn-sat), var(--btn-light));
+    border: 2px solid hsl(var(--btn-hue), var(--btn-sat), var(--btn-light));
+}
+
+.modalContainer .footer button:hover {
+    background-color: hsl(var(--btn-hue), var(--btn-sat), 90%)
 }

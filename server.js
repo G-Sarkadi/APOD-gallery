@@ -22,7 +22,7 @@ let options = {
     extensions: ['htm', 'html','css','js','ico','jpg','jpeg','png','svg'],
     index: ['index.html'],
     maxAge: '1m',
-    redirect: false
+    redirect: true
   }
   app.use(express.static('build', options))
 

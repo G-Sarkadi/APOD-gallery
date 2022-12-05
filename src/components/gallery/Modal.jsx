@@ -1,7 +1,6 @@
 import React from "react";
 import FormatedDate from "../FormatedDate";
-import "./Modal.css";
-import Picture from "../Picture";
+import Picture from "../main/CardPicture";
 import ReactDom from 'react-dom'
 import Credits from "../Credits";
 
@@ -32,12 +31,7 @@ function Modal({ setOpenModal, modalContent }) {
                     <p className="explanation">{modalContent.explanation}</p>
                 </div>
                 <div className="footer">
-                    <button
-                        onClick={() => {
-                            setOpenModal(false);
-                        }}
-                        id="cancelBtn"
-                    >
+                    <button className="btn" onClick={() => { setOpenModal(false) }}>
                         Close
                     </button>
                 </div>

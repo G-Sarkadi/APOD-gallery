@@ -4,9 +4,7 @@ const NavButton = ({ text, route }) => {
     const navigate = useNavigate();
 
     return (
-        <>
-            <button className="navButton" onClick={() => navigate(route)}>{text}</button>
-        </>
+        <button className="btn" onClick={() => navigate(route)}>{text}</button>
     )
 }
 

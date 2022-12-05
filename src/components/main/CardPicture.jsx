@@ -1,6 +1,6 @@
-import LoadingPlaceholder from "./LoadingPlaceholder"
+import LoadingPlaceholder from "../LoadingPlaceholder"
 
-const Picture = ({ starData, className }) => {
+const CardPicture = ({ starData, className }) => {
     const openInNewTab = (url) => {
         window.open(url, '_blank', 'noopener,noreferrer');
     };
@@ -26,4 +26,4 @@ const Picture = ({ starData, className }) => {
     )
 }
 
-export default Picture
+export default CardPicture
