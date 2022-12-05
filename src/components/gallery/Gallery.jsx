@@ -33,7 +33,7 @@ const Gallery = () => {
         };
     }, [URL, toggleRefresh]);
 
-    document.title = 'Astronomy Picture of the Day'
+    document.title = 'Picture Gallery'
 
     return (
         <>
@@ -41,8 +41,8 @@ const Gallery = () => {
             <div className="container">
                 <h1>Gallery</h1>
                 {cards ? <GalleryContainer galleryContent={cards} setModalOpen={setModalOpen} setModalContent={setModalContent} /> : <LoadingPlaceholder />}
-                <NavButton text="Go to Main Page" route="/" />
-                <button className="navButton" onClick={()=> {setToggleRefresh(prev => !prev)}}>Refresh</button>
+                <NavButton text="Daily picture" route="/" />
+                <button className="btn" onClick={()=> {setToggleRefresh(prev => !prev)}}>More random pictures</button>
             </div>
             <Footer />
         </>

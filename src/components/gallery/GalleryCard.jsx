@@ -1,14 +1,14 @@
+import GalleryCardPicture from "./GalleryCardPicture";
+
 const GalleryCard = ({ content, setModalOpen, setModalContent }) => {
 
     return (
-        <button className="galleryPictureButton"
-            onClick={() => {
-                setModalOpen(true);
-                setModalContent(content)
-            }}
-        >
-            <img className="galleryCard" src={content.thumbnail_url || content.url} alt={content.title} />
-        </button>
+        <div className="galleryCard">
+            <GalleryCardPicture content={content} setModalContent={setModalContent} setModalOpen={setModalOpen}/>
+            <div className="galleryCardFooter">
+                {content.title}
+            </div>
+        </div>
     )
 }
 
