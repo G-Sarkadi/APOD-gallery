@@ -9,6 +9,7 @@ const Gallery = () => {
     const [cards, setCards] = useState();
     const [modalOpen, setModalOpen] = useState(false);
     const [modalContent, setModalContent] = useState({});
+    const [toggleRefresh, setToggleRefresh] = useState(false)
 
     const numberOfCards = 20;
     const URL = `/api?count=${numberOfCards}&thumbs=true`
@@ -30,7 +31,7 @@ const Gallery = () => {
             // cancel the request before component unmounts
             controller.abort();
         };
-    }, [URL]);
+    }, [URL, toggleRefresh]);
 
     document.title = 'Astronomy Picture of the Day'
 
@@ -41,6 +42,7 @@ const Gallery = () => {
                 <h1>Gallery</h1>
                 {cards ? <GalleryContainer galleryContent={cards} setModalOpen={setModalOpen} setModalContent={setModalContent} /> : <LoadingPlaceholder />}
                 <NavButton text="Go to Main Page" route="/" />
+                <button className="navButton" onClick={()=> {setToggleRefresh(prev => !prev)}}>Refresh</button>
             </div>
             <Footer />
         </>
