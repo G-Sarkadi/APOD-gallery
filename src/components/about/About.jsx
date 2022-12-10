@@ -1,13 +1,31 @@
 import NavButton from "../NavButton"
 
 const About = () => {
-  return (
-    <div className="container">
-        <h1>About</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime hic illum sequi nobis unde deserunt, ipsam voluptate sed tenetur porro, eum at temporibus ipsa exercitationem est! Quia voluptatem dolore commodi mollitia nulla voluptate similique eligendi facere voluptatum, quibusdam sequi hic tenetur eveniet necessitatibus eaque ullam quos quas. Dolore quis dicta, officiis omnis cumque ducimus architecto labore quaerat. Officia neque ullam error? Deserunt, doloribus magni. Quibusdam perspiciatis non accusantium, impedit placeat exercitationem similique! Vero consectetur ut dolor culpa tempore minus similique molestiae consequatur, exercitationem praesentium id repudiandae eum quisquam nostrum iusto quaerat ad earum nemo autem quae inventore. Eaque, ab voluptatem?</p>
-        <NavButton text="Home" route="/" />
-    </div>
-  )
+    return (
+        <div className="container">
+            <h1>About</h1>
+            <div className="aboutContainer">
+                <img className="aboutImage" src="/aboutBackground.png" alt="astronaut" />
+                <div className="aboutTextContainer">
+                    <p>This is a variation of NASA's Astronomy Picture of the Day site.
+                        The main page shows the actual picture of the day and the gallery is a random selection
+                        from previous days.
+                    </p>
+                    <p>
+                        This page started as a school project but after that I decided to continue to work on it and make it better.
+                        The source of the data is an open NASA API (<a href="https://api.nasa.gov/">https://api.nasa.gov/</a>).
+                        The front-end uses React, Bootstrap and CSS, and the back-end is a light-weight Express proxy server,
+                        which handles the communication with the API.
+                    </p>
+                    <p>Thank you for visiting and please check out the GitHub repository of the project: <a href="https://github.com/G-Sarkadi/APOD-gallery">
+                        <img className="GitHubLogo" src="/github-mark.png" alt="GitHub logo" height="20px" />
+                        </a>
+                    </p>
+                    <NavButton text="Home" route="/" />
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default About

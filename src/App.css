@@ -13,7 +13,30 @@ body {
     text-align: center;
     /* The pixel is the footer hight, this is ugly,
     need some dynamic value*/
-    min-height: calc(100vh - 45px);
+    min-height: calc(100vh - 50px);
+}
+
+.aboutContainer {
+    margin: 5% 10% 0 10%;
+    display: flex;
+}
+
+.aboutTextContainer {
+    text-align: justify;
+    font-size: 1.3em;
+    margin-left: 5vw;
+    max-width: 50vw;
+}
+
+.aboutImage {
+    height: 50vh;
+}
+
+footer {
+    margin-left: 10px;
+    font-style: italic;
+    font-size: smaller;
+    height: 25px;
 }
 
 .starPicture {
@@ -67,13 +90,6 @@ body {
     margin-bottom: 1vh;
     font-size: 0.9rem;
     font-style: italic;
-}
-
-footer {
-    margin-left: 10px;
-    font-style: italic;
-    font-size: smaller;
-    height: 25px;
 }
 
 .btn {
