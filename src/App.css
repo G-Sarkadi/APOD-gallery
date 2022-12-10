@@ -16,22 +16,6 @@ body {
     min-height: calc(100vh - 50px);
 }
 
-.aboutContainer {
-    margin: 5% 10% 0 10%;
-    display: flex;
-}
-
-.aboutTextContainer {
-    text-align: justify;
-    font-size: 1.3em;
-    margin-left: 5vw;
-    max-width: 50vw;
-}
-
-.aboutImage {
-    height: 50vh;
-}
-
 footer {
     margin-left: 10px;
     font-style: italic;
@@ -235,6 +219,26 @@ footer {
 
 .modalContainer .footer button:hover {
     background-color: hsl(var(--btn-hue), var(--btn-sat), 90%)
+}
+
+.aboutContainer {
+    border: 1em solid hsl(var(--btn-hue), var(--btn-sat), var(--btn-light));
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.35) -5px 5px 15px;
+    padding: 5%;
+    margin: 3% 6% 0 6%;
+    display: flex;
+}
+
+.aboutTextContainer {
+    text-align: justify;
+    font-size: 1.3em;
+    margin-left: 5vw;
+    max-width: 50vw;
+}
+
+.aboutImage {
+    height: 50vh;
 }
 
 .errorContainer {
