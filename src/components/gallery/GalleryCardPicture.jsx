@@ -1,16 +1,14 @@
 
 const GalleryCardPicture = ({ content, setModalContent, setModalOpen }) => {
     return (
-        <div className="galleryCardPicture">
-            <img
-                src={content.thumbnail_url || content.url}
-                alt={content.title}
-                onClick={() => {
-                    setModalOpen(true);
-                    setModalContent(content)
-                }}
-            />
-        </div>
+        <img className="galleryCardPicture"
+            src={content.thumbnail_url || content.url}
+            alt={content.title}
+            onClick={() => {
+                setModalOpen(true);
+                setModalContent(content)
+            }}
+        />
     )
 }
 

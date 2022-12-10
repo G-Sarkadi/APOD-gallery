@@ -120,6 +120,7 @@ footer {
 }
 
 .galleryCard {
+    position: relative;
     background: white;
     border-radius: 0.25rem;
     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .2);
@@ -127,33 +128,45 @@ footer {
 }
 
 .galleryCardPicture {
-    padding-bottom: 0.5rem;
-    overflow: hidden;
-}
-
-.galleryCardPicture:hover {
-    cursor: pointer;
-}
-
-.galleryCardPicture > img {
     display: block;
     width: 100%;
     max-height: 400px;
     aspect-ratio: 16 / 9;
     object-fit: cover;
     object-position: center;
-    transition: 200ms transform ease-in-out;
 }
 
-.galleryCard:hover > .galleryCardPicture > img {
-    transform: scale(1.025);
+.galleryCardPicture:hover {
+    cursor: pointer;
+}
+
+.galleryCardPicture, .galleryCardFooter {
+    transition: 300ms transform ease-in-out;
 }
 
 .galleryCardFooter {
+    position: absolute;
+    inset: 0;
     padding-bottom: 0.5rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    font-weight: bold;
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, .7);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.galleryCard:hover > .galleryCardPicture {
+    transform: scale(1.025);
+}
+
+.galleryCard > .galleryCardFooter {
+    transform: translateY(100%);
+}
+
+.galleryCard:hover > .galleryCardFooter {
+    transform: translateY(75%);
 }
 
 .modalBackground {
