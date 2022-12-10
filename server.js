@@ -1,4 +1,5 @@
 const url = require('url')
+const path = require('path')
 const express = require('express')
 const cors = require('cors')
 const needle = require('needle')
@@ -64,5 +65,10 @@ app.get('/api', conditionalCache, async (req, res) => {
         res.status(500).json({ error })
     }
 })
+
+// Route all requests to subpages to the main html -> React can handle in from that point
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  });
 
 app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
