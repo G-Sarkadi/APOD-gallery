@@ -2,7 +2,6 @@ import Card from "./Card"
 import DateInput from "./DateInput"
 import { useState } from "react";
 import NavButton from "../NavButton";
-import Footer from "../Footer";
 
 const Home = () => {
     const [selectedDate, setSelectedDate] = useState();
@@ -24,7 +23,6 @@ const Home = () => {
                 <Card date={selectedDate ?? today} />
                 <NavButton text={"Go to Gallery"} route="/gallery" />
             </div>
-            <Footer />
         </>
     )
 }

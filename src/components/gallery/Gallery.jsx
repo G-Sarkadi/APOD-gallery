@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import Footer from "../Footer"
 import GalleryContainer from "./GalleryContainer"
 import LoadingPlaceholder from "../LoadingPlaceholder"
 import NavButton from "../NavButton"
@@ -44,7 +43,6 @@ const Gallery = () => {
                 <NavButton text="Daily picture" route="/" />
                 <button className="btn" onClick={()=> {setToggleRefresh(prev => !prev)}}>More random pictures</button>
             </div>
-            <Footer />
         </>
     )
 }
