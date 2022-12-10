@@ -40,8 +40,9 @@ const Gallery = () => {
             <div className="container">
                 <h1>Gallery</h1>
                 {cards ? <GalleryContainer galleryContent={cards} setModalOpen={setModalOpen} setModalContent={setModalContent} /> : <LoadingPlaceholder />}
-                <NavButton text="Daily picture" route="/" />
+                <NavButton text="Home" route="/" />
                 <button className="btn" onClick={()=> {setToggleRefresh(prev => !prev)}}>More random pictures</button>
+                <NavButton text="About" route="/about"/>
             </div>
         </>
     )
