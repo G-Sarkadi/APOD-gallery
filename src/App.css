@@ -206,3 +206,16 @@ footer {
 .modalContainer .footer button:hover {
     background-color: hsl(var(--btn-hue), var(--btn-sat), 90%)
 }
+
+.errorContainer {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.errorImage {
+    height: 35vh;
+}
