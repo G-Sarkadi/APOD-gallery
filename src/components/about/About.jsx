@@ -12,7 +12,7 @@ const About = () => {
                         from previous days.
                     </p>
                     <p>
-                        This page started as a school project but after that I decided to continue to work on it and make it better.
+                        This page started as a weekly school project but after that I decided to continue to work on it and make it better.
                         The source of the data is an open NASA API (<a href="https://api.nasa.gov/">https://api.nasa.gov/</a>).
                         The front-end uses React, Bootstrap and CSS, and the back-end is a light-weight Express proxy server,
                         which handles the communication with the API.
