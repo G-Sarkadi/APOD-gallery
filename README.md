@@ -7,7 +7,7 @@ In the gallery the content is shown in cards. The image of the card is the actua
 There is also an about page, with the short version of this readme, and a custom 404 page, in case something breaks.
 
 ## How is it working?
-The source of the data is an open NASA API (https://api.nasa.gov/). The front-end uses React, Bootstrap and CSS. The React handles the server-side routing, state management and fetching data from the server.The back-end is a light-weight Express proxy server, which handles the communication with the API, hides the API keys and does some basic cache control and rate limiting.
+The source of the data is an open NASA API (https://api.nasa.gov/). The front-end uses React, Bootstrap and CSS. React handles the server-side routing, state management and fetching data from the server.The back-end is a light-weight Express proxy server, which handles the communication with the API, hides the API keys and does some basic cache control and rate limiting.
 
 ## Where can I see it?
-The site is currently hosted at: https://www.cyclic.sh/. You can check it at: https://apod-gallery.cyclic.app/
+The site is currently hosted by: https://www.cyclic.sh/. You can check it at: https://apod-gallery.cyclic.app/
