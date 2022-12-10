@@ -1,70 +1,13 @@
-# Getting Started with Create React App
+# Astronomy Picture of the Day
+## What is this?
+This is a variation of NASA's Astronomy Picture of the Day site (https://apod.nasa.gov/apod/astropix.html). It started as a school project but after that I decided to continue to work on it and make it better.<br />
+The main page shows the actual picture of the day and the gallery is a random selection from previous days.<br />
+On the main page you can select a date from a dropdown calendar and the site fetches and show the content of that day. This could be a picture, a video, or sometimes an embedded html file. If you click the picture, it opens full-size in a new tab. This shows a hd version of the image, if available.<br />
+In the gallery the content is shown in cards. The image of the card is the actual image (if it's a picture) or a video thumbnail (in case of a video). Please keep in mind that the daily data served by the API starts in 1995, and some of the early (pre-2012) videos doesn't have a thumbnail image. If you click on the card, a modal windows pops up, with similar information like on the main page. Again, if you click on the picture, it opens in a new tab.<br />
+There is also an about page, with the short verion of this readme, and a custom 404 page, in case something breaks.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How is it working?
+The source of the data is an open NASA API (https://api.nasa.gov/). The front-end uses React, Bootstrap and CSS. The React handles the server-side routing, state management and fetching data from the server.The back-end is a light-weight Express proxy server, which handles the communication with the API, hides the API keys and does some basic cache control and rate limiting.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Where can I see it?
+The site is currently hosted at: https://www.cyclic.sh/. You can check it at: https://apod-gallery.cyclic.app/
