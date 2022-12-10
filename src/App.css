@@ -115,7 +115,6 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 1rem;
-    align-items: flex-start;
     margin: 0 3vw 2vh 3vw;
 }
 
