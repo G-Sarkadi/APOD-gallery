@@ -4,7 +4,7 @@ This is a variation of NASA's Astronomy Picture of the Day site (https://apod.na
 The main page shows the actual picture of the day and the gallery is a random selection from previous days.<br />
 On the main page you can select a date from a dropdown calendar and the site fetches and show the content of that day. This could be a picture, a video, or sometimes an embedded html file. If you click the picture, it opens full-size in a new tab. This shows a hd version of the image, if available.<br />
 In the gallery the content is shown in cards. The image of the card is the actual image (if it's a picture) or a video thumbnail (in case of a video). Please keep in mind that the daily data served by the API starts in 1995, and some of the early (pre-2012) videos doesn't have a thumbnail image. If you click on the card, a modal windows pops up, with similar information like on the main page. Again, if you click on the picture, it opens in a new tab.<br />
-There is also an about page, with the short verion of this readme, and a custom 404 page, in case something breaks.
+There is also an about page, with the short version of this readme, and a custom 404 page, in case something breaks.
 
 ## How is it working?
 The source of the data is an open NASA API (https://api.nasa.gov/). The front-end uses React, Bootstrap and CSS. The React handles the server-side routing, state management and fetching data from the server.The back-end is a light-weight Express proxy server, which handles the communication with the API, hides the API keys and does some basic cache control and rate limiting.
