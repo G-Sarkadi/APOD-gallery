@@ -21,7 +21,8 @@ const Home = () => {
                 <h1>Astronomy Picture of the Day</h1>
                 <DateInput selectedDate={selectedDate} today={today} setSelectedDate={setSelectedDate} />
                 <Card date={selectedDate ?? today} />
-                <NavButton text={"Go to Gallery"} route="/gallery" />
+                <NavButton text={"Gallery"} route="/gallery" />
+                <NavButton text={"About"} route="/about" />
             </div>
         </>
     )
