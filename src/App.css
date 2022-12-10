@@ -151,7 +151,7 @@ footer {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     font-size: 1.2rem;
-    background-color: rgba(255, 255, 255, .7);
+    background-color: rgba(255, 255, 255, .6);
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -166,7 +166,7 @@ footer {
 }
 
 .galleryCard:hover > .galleryCardFooter {
-    transform: translateY(75%);
+    transform: translateY(77%);
 }
 
 .modalBackground {
@@ -184,7 +184,7 @@ footer {
     max-width: 95%;
     max-height: 95%;
     border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.7);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
