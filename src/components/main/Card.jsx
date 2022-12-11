@@ -31,7 +31,7 @@ const Card = ({ date }) => {
 
 
     return (
-        <div className="card">
+        <div className="mainCard">
             <p>
                 <FormatedDate date={date} />
             </p>
