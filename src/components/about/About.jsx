@@ -2,7 +2,7 @@ import NavButton from "../NavButton"
 
 const About = () => {
     return (
-        <div className="container">
+        <div className="contentContainer">
             <h1>About</h1>
             <div className="aboutContainer">
                 <img className="aboutImage" src="/aboutBackground.png" alt="astronaut" />

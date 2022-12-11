@@ -17,7 +17,7 @@ const Home = () => {
 
     return (
         <>
-            <div className="container">
+            <div className="contentContainer">
                 <h1>Astronomy Picture of the Day</h1>
                 <DateInput selectedDate={selectedDate} today={today} setSelectedDate={setSelectedDate} />
                 <Card date={selectedDate ?? today} />

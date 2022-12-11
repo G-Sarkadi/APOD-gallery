@@ -1,7 +1,7 @@
 :root {
-    --btn-hue: 200;
-    --btn-sat: 50%;
-    --btn-light: 50%;
+    --navBtn-hue: 200;
+    --navBtn-sat: 50%;
+    --navBtn-light: 50%;
 }
 
 body {
@@ -9,7 +9,7 @@ body {
     background-color: #F4F4FF;
 }
 
-.container {
+.contentContainer {
     text-align: center;
     /* The pixel is the footer hight, this is ugly,
     need some dynamic value*/
@@ -76,8 +76,8 @@ footer {
     font-style: italic;
 }
 
-.btn {
-    background-color: hsl(var(--btn-hue), var(--btn-sat), var(--btn-light));
+.navBtn {
+    background-color: hsl(var(--navBtn-hue), var(--navBtn-sat), var(--navBtn-light));
     border-radius: 0.75em;
     border: none;
     color: #F4F4FF;
@@ -87,12 +87,12 @@ footer {
     font-weight: bold;
 }
 
-.btn + .btn {
+.navBtn + .navBtn {
     margin-left: .5rem;
 }
 
-.btn:hover {
-    --btn-light: 40%
+.navBtn:hover {
+    --navBtn-light: 40%
 }
 
 .galleryContainer {
@@ -221,16 +221,16 @@ footer {
 
 .modalContainer .footer button {
     background-color: white;
-    color:hsl(var(--btn-hue), var(--btn-sat), var(--btn-light));
-    border: 2px solid hsl(var(--btn-hue), var(--btn-sat), var(--btn-light));
+    color:hsl(var(--navBtn-hue), var(--navBtn-sat), var(--navBtn-light));
+    border: 2px solid hsl(var(--navBtn-hue), var(--navBtn-sat), var(--navBtn-light));
 }
 
 .modalContainer .footer button:hover {
-    background-color: hsl(var(--btn-hue), var(--btn-sat), 90%)
+    background-color: hsl(var(--navBtn-hue), var(--navBtn-sat), 90%)
 }
 
 .aboutContainer {
-    border: 1em solid hsl(var(--btn-hue), var(--btn-sat), var(--btn-light));
+    border: 1em solid hsl(var(--navBtn-hue), var(--navBtn-sat), var(--navBtn-light));
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.35) -5px 5px 15px;
     padding: 5%;
@@ -256,7 +256,7 @@ footer {
 }
 
 .errorContainer {
-    border: 1em solid hsl(var(--btn-hue), var(--btn-sat), var(--btn-light));
+    border: 1em solid hsl(var(--navBtn-hue), var(--navBtn-sat), var(--navBtn-light));
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.35) -5px 5px 15px;
     padding: 3%;
