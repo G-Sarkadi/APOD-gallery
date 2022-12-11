@@ -77,6 +77,12 @@ footer {
     font-style: italic;
 }
 
+.navbarBrandImage {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+}
+
 .navBtn {
     background-color: hsl(var(--navBtn-hue), var(--navBtn-sat), var(--navBtn-light));
     border-radius: 0.75em;
