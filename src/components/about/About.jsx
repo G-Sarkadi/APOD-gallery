@@ -1,4 +1,3 @@
-import NavButton from "../NavButton"
 
 const About = () => {
     return (
@@ -21,7 +20,6 @@ const About = () => {
                         <img className="GitHubLogo" src="/github-mark.png" alt="GitHub logo" height="20px" />
                         </a>
                     </p>
-                    <NavButton text="Home" route="/" />
                 </div>
             </div>
         </div>

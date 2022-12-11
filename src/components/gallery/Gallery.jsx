@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import GalleryContainer from "./GalleryContainer"
 import LoadingPlaceholder from "../LoadingPlaceholder"
-import NavButton from "../NavButton"
 import Modal from "./Modal"
 
 const Gallery = () => {
@@ -40,9 +39,7 @@ const Gallery = () => {
             <div className="contentContainer">
                 <h1>Gallery</h1>
                 {cards ? <GalleryContainer galleryContent={cards} setModalOpen={setModalOpen} setModalContent={setModalContent} /> : <LoadingPlaceholder />}
-                <NavButton text="Home" route="/" />
                 <button className="navBtn" onClick={()=> {setToggleRefresh(prev => !prev)}}>More random pictures</button>
-                <NavButton text="About" route="/about"/>
             </div>
         </>
     )

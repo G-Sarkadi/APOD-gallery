@@ -11,9 +11,10 @@ body {
 
 .contentContainer {
     text-align: center;
-    /* The pixel is the footer hight, this is ugly,
+    margin-top: 8vh;
+    /* The pixel is the footer + navbar hight minus this containers top margin, this is ugly,
     need some dynamic value*/
-    min-height: calc(100vh - 50px);
+    min-height: calc(92vh - 25px);
 }
 
 footer {
