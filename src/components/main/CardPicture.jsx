@@ -11,7 +11,7 @@ const CardPicture = ({ starData, className }) => {
         }
         if (starData.media_type === "image") {
             return (
-                <button className="starPictureButton" onClick={() => openInNewTab(starData.hdurl ?? starData.url)}>
+                <button className="pictureButton" onClick={() => openInNewTab(starData.hdurl ?? starData.url)}>
                     <img src={starData.url} alt={starData.title} className={className} />
                 </button>
             )

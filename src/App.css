@@ -25,15 +25,16 @@ footer {
     height: 25px;
 }
 
-.starPicture {
-    max-height: 55vh;
+.modalPicture {
+    max-height: 80vh;
     max-width: 80vw;
     border-radius: 10px;
     object-fit: contain;
     border: 1px solid rgba(0, 0, 0, 0);
+    margin-bottom: 1vh;
 }
 
-.starPicture:hover {
+.modalPicture:hover {
     cursor: pointer;
     border: 1px solid #777;
 }
@@ -58,7 +59,7 @@ footer {
     margin-bottom: 1vh;
 }
 
-.starPictureButton {
+.pictureButton {
     border: 0;
     background-color: rgba(0, 0, 0, 0);
 }
@@ -66,6 +67,7 @@ footer {
 .starVideo {
     width: 960px;
     height: 540px;
+    margin-bottom: 1vh;
 }
 
 .starExplanation {
@@ -192,8 +194,11 @@ footer {
 }
 
 .modalContainer {
+    overflow: auto;
+    margin-top: 5vh;
+    /* margin-bottom: 10vh; */
     max-width: 95%;
-    max-height: 95%;
+    max-height: 90vh;
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.7);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
