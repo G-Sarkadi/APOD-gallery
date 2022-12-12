@@ -2,10 +2,10 @@
 const About = () => {
     return (
         <div className="contentContainer">
-            <h1>About</h1>
             <div className="aboutContainer">
                 <img className="aboutImage" src="/aboutBackground.png" alt="astronaut" />
                 <div className="aboutTextContainer">
+                    <h2>About</h2>
                     <p>This is a variation of NASA's Astronomy Picture of the Day site.
                         The main page shows the actual picture of the day and the gallery is a random selection
                         from previous days.
@@ -17,8 +17,8 @@ const About = () => {
                         which handles the communication with the API.
                     </p>
                     <p>Thank you for visiting and please check out the GitHub repository of the project: <a href="https://github.com/G-Sarkadi/APOD-gallery">
-                        <img className="GitHubLogo" src="/github-mark.png" alt="GitHub logo" height="20px" />
-                        </a>
+                        <img className="GitHubLogo" src="/github-mark.png" alt="GitHub logo" height="25px" />
+                    </a>
                     </p>
                 </div>
             </div>

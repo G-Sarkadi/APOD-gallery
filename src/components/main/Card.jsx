@@ -32,10 +32,8 @@ const Card = ({ date }) => {
 
     return (
         <div className="mainCard">
-            <p>
-                <FormatedDate date={date} />
-            </p>
             <Picture starData={starData} className={"mainPicture"} />
+            <FormatedDate date={date} />
             <div className="pictureTitle">
                 {starData.title}
             </div>
