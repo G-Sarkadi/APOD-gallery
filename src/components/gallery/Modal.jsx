@@ -21,12 +21,10 @@ function Modal({ setOpenModal, modalContent }) {
                     <h2>
                         {modalContent.title}
                     </h2>
-                    <p>
-                        <FormatedDate date={modalContent.date} />
-                    </p>
                 </div>
                 <div className="body">
-                    <Picture starData={modalContent} className={"starPicture"} />
+                    <Picture starData={modalContent} className={"modalPicture"} />
+                    <FormatedDate date={modalContent.date} />
                     <Credits starData={modalContent} />
                     <p className="explanation">{modalContent.explanation}</p>
                 </div>
