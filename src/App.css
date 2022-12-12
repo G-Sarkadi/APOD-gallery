@@ -2,6 +2,7 @@
     --navBtn-hue: 200;
     --navBtn-sat: 50%;
     --navBtn-light: 50%;
+    --transition-speed: 400ms;
 }
 
 body {
@@ -11,10 +12,10 @@ body {
 
 .contentContainer {
     text-align: center;
-    margin-top: 8vh;
+    margin-top: 10vh;
     /* The pixel is the footer + navbar hight minus this containers top margin, this is ugly,
     need some dynamic value*/
-    min-height: calc(92vh - 25px);
+    min-height: calc(90vh - 25px);
 }
 
 footer {
@@ -38,10 +39,11 @@ footer {
 }
 
 .mainPicture {
-    max-height: 75vh;
+    max-height: 80vh;
     border-radius: 10px;
     object-fit: contain;
     border: 1px solid rgba(0, 0, 0, 0);
+    margin-bottom: 1vh;
 }
 
 .mainPicture:hover {
@@ -77,10 +79,12 @@ footer {
     font-style: italic;
 }
 
-.navbarBrandImage {
-    width: 30px;
-    height: 30px;
-    margin: 0 10px;
+.navbar-nav.nav-pills .nav-link.active {
+    background-color: hsl(var(--navBtn-hue), var(--navBtn-sat), var(--navBtn-light));
+}
+
+.navbar-nav.nav-pills .nav-link.active:hover {
+    --navBtn-light: 40%
 }
 
 .navBtn {
@@ -113,8 +117,12 @@ footer {
     position: relative;
     background: white;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .2);
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
     overflow: hidden;
+}
+
+.galleryCard:hover {
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, .7);
 }
 
 .galleryCardPicture {
@@ -131,7 +139,12 @@ footer {
 }
 
 .galleryCardPicture, .galleryCardFooter {
-    transition: 300ms transform ease-in-out;
+    transition: var(--transition-speed) transform ease-in-out;
+    
+}
+
+.galleryCard {
+    transition: var(--transition-speed) box-shadow ease-in-out;
 }
 
 .galleryCardFooter {
@@ -141,7 +154,7 @@ footer {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     font-size: 1.2rem;
-    background-color: rgba(255, 255, 255, .6);
+    background-color: rgba(255, 255, 255, .7);
     display: flex;
     justify-content: center;
     align-items: flex-start;

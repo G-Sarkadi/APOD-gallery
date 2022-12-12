@@ -1,6 +1,14 @@
 const FormatedDate = ({ date }) => {
     function formatDate() {
-        let dateObject = new Date(date + "z");
+        // Firefox parses the date differently -> needs a different Date object
+        let dateObject;
+        let isFirefox = typeof InstallTrigger !== 'undefined';
+        if (isFirefox) {
+            dateObject = new Date(date);
+        } else {
+            dateObject = new Date(date + "z");
+        }
+        
         return dateObject.getFullYear()
             + " "
             + dateObject.toLocaleDateString("en-GB", { month: "long" })
@@ -9,9 +17,9 @@ const FormatedDate = ({ date }) => {
     }
 
     return (
-        <>
+        <div>
             {formatDate()}
-        </>
+        </div>
     )
 }
 
