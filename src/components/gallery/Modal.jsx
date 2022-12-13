@@ -6,9 +6,14 @@ import Credits from "../Credits";
 
 function Modal({ setOpenModal, modalContent }) {
     return ReactDom.createPortal(
-        <div className="modalBackground">
-            <div className="modalContainer">
-                <div className="titleCloseBtn">
+        <div className="modalBackground" onClick={() => setOpenModal(false)}>
+            <div className="modalContainer" onClick={e => e.stopPropagation()}>
+                <div className="modalTitle">
+                    {/* Empty placeholder div, to force the title to the center and the X button to the corner */}
+                    <div></div>
+                    <h2 className="pictureTitle">
+                        {modalContent.title}
+                    </h2>
                     <button
                         onClick={() => {
                             setOpenModal(false);
@@ -17,11 +22,6 @@ function Modal({ setOpenModal, modalContent }) {
                         X
                     </button>
                 </div>
-                <div className="title">
-                    <h2>
-                        {modalContent.title}
-                    </h2>
-                </div>
                 <div className="body">
                     <Picture starData={modalContent} className={"modalPicture"} />
                     <FormatedDate date={modalContent.date} />
@@ -29,7 +29,7 @@ function Modal({ setOpenModal, modalContent }) {
                     <p className="explanation">{modalContent.explanation}</p>
                 </div>
                 <div className="footer">
-                    <button className="btn" onClick={() => { setOpenModal(false) }}>
+                    <button className="navBtn" onClick={() => { setOpenModal(false) }}>
                         Close
                     </button>
                 </div>
