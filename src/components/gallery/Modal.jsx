@@ -11,10 +11,10 @@ function Modal({ setOpenModal, modalContent }) {
                 <div className="modalTitle">
                     {/* Empty placeholder div, to force the title to the center and the X button to the corner */}
                     <div></div>
-                    <h2 className="pictureTitle">
+                    <h3 className="pictureTitle">
                         {modalContent.title}
-                    </h2>
-                    <button
+                    </h3>
+                    <button className="closingXButton"
                         onClick={() => {
                             setOpenModal(false);
                         }}
