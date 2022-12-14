@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import GalleryContainer from "./GalleryContainer"
-import LoadingPlaceholder from "../LoadingPlaceholder"
+import PlaceholderContainer from "../PlaceholderContainer"
 import Modal from "./Modal"
 
 const Gallery = () => {
@@ -38,7 +38,7 @@ const Gallery = () => {
             {modalOpen && <Modal setOpenModal={setModalOpen} modalContent={modalContent} />}
             <div className="contentContainer">
                 <h3>Gallery</h3>
-                {cards ? <GalleryContainer galleryContent={cards} setModalOpen={setModalOpen} setModalContent={setModalContent} /> : <LoadingPlaceholder />}
+                {cards ? <GalleryContainer galleryContent={cards} setModalOpen={setModalOpen} setModalContent={setModalContent} /> : <PlaceholderContainer />}
                 <button className="navBtn" onClick={()=> {setToggleRefresh(prev => !prev)}}>More random pictures</button>
             </div>
         </>

@@ -1,4 +1,3 @@
-import LoadingPlaceholder from "../LoadingPlaceholder"
 
 const CardPicture = ({ starData, className }) => {
     const openInNewTab = (url) => {
@@ -16,7 +15,7 @@ const CardPicture = ({ starData, className }) => {
                 </button>
             )
         }
-        return <LoadingPlaceholder />
+        return <div>Loading...</div>
     };
 
     return (

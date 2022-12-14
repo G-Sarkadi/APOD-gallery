@@ -136,6 +136,21 @@ footer {
     aspect-ratio: 4 / 3;
     object-fit: cover;
     object-position: center;
+    animation: placeholder-animation 1s ease-in-out infinite alternate;
+}
+
+@keyframes placeholder-animation {
+    0% {
+        background-color: hsl(200, 20%, 70%);
+    }
+
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}
+
+.placeholderCard:hover {
+    cursor:wait;
 }
 
 .galleryCardPicture, .galleryCardFooter {
