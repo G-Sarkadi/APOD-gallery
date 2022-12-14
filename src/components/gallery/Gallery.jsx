@@ -37,7 +37,7 @@ const Gallery = () => {
         <>
             {modalOpen && <Modal setOpenModal={setModalOpen} modalContent={modalContent} />}
             <div className="contentContainer">
-                <h1>Gallery</h1>
+                <h3>Gallery</h3>
                 {cards ? <GalleryContainer galleryContent={cards} setModalOpen={setModalOpen} setModalContent={setModalContent} /> : <LoadingPlaceholder />}
                 <button className="navBtn" onClick={()=> {setToggleRefresh(prev => !prev)}}>More random pictures</button>
             </div>

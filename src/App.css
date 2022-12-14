@@ -12,10 +12,11 @@ body {
 
 .contentContainer {
     text-align: center;
-    margin-top: 10vh;
+    margin-top: 5.5rem;
+    margin-bottom: 25px;
     /* The pixel is the footer + navbar hight minus this containers top margin, this is ugly,
     need some dynamic value*/
-    min-height: calc(90vh - 25px);
+    min-height: calc(90vh - 50px);
 }
 
 footer {
@@ -124,7 +125,7 @@ footer {
 }
 
 .galleryCard:hover {
-    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, .7);
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, .5);
     cursor: pointer;
 }
 
@@ -208,11 +209,15 @@ footer {
     align-items: center;
 }
 
-.modalTitle button {
+.closingXButton {
     background-color: transparent;
     border: none;
     font-size: 25px;
     cursor: pointer;
+}
+
+.closingXButton:hover {
+    color: #777;
 }
 
 .explanation {
@@ -240,7 +245,7 @@ footer {
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.35) -5px 5px 15px;
     padding: 3% 5%;
-    margin: 3% 6% 0 6%;
+    margin: 10vh 6% 0 6%;
     display: flex;
 }
 

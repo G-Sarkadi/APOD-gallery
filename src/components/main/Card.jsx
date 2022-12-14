@@ -32,9 +32,9 @@ const Card = ({ date }) => {
 
     return (
         <div className="mainCard">
-            <h2 className="pictureTitle">
+            <h3 className="pictureTitle">
                 {starData.title}
-            </h2>
+            </h3>
             <Picture starData={starData} className={"mainPicture"} />
             <FormatedDate date={date} />
             <Credits starData={starData} />
