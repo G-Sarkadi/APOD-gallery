@@ -10,13 +10,16 @@ body {
     background-color: #F4F4FF;
 }
 
+#root {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
 .contentContainer {
     text-align: center;
     margin-top: 5.5rem;
-    margin-bottom: 25px;
-    /* The pixel is the footer + navbar hight minus this containers top margin, this is ugly,
-    need some dynamic value*/
-    min-height: calc(90vh - 50px);
+    flex: 1;
 }
 
 footer {
@@ -54,9 +57,6 @@ footer {
 }
 
 .pictureTitle {
-    /* font-weight: bold;
-    font-size: 1.1rem; */
-    /* margin-top: 1vh; */
     margin-bottom: 2vh;
 }
 
