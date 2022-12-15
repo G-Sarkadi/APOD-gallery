@@ -309,3 +309,21 @@ footer {
     width: 22vw;
     animation: astronautMove 10s infinite;
 }
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: spinner-animation 1s linear infinite;
+  }
+  
+  @keyframes spinner-animation {
+    0% {
+      box-shadow: -72px 0 #FFF inset;
+    }
+    100% {
+      box-shadow: 48px 0 #FFF inset;
+    }
+  }
