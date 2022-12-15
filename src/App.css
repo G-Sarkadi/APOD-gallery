@@ -10,13 +10,16 @@ body {
     background-color: #F4F4FF;
 }
 
+#root {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
 .contentContainer {
     text-align: center;
     margin-top: 5.5rem;
-    margin-bottom: 25px;
-    /* The pixel is the footer + navbar hight minus this containers top margin, this is ugly,
-    need some dynamic value*/
-    min-height: calc(90vh - 50px);
+    flex: 1;
 }
 
 footer {
@@ -40,6 +43,12 @@ footer {
     border: 1px solid #777;
 }
 
+
+.modalText {
+    max-width: 75vw;
+    margin-top: 0;
+}
+
 .mainPicture {
     max-height: 80vh;
     border-radius: 10px;
@@ -54,9 +63,6 @@ footer {
 }
 
 .pictureTitle {
-    /* font-weight: bold;
-    font-size: 1.1rem; */
-    /* margin-top: 1vh; */
     margin-bottom: 2vh;
 }
 
@@ -71,7 +77,7 @@ footer {
     margin-bottom: 1vh;
 }
 
-.starExplanation {
+.mainText {
     padding: 0 10%;
 }
 
@@ -141,11 +147,11 @@ footer {
 
 @keyframes placeholder-animation {
     0% {
-        background-color: hsl(200, 20%, 70%);
+        background-color: hsl(200, 20%, 80%);
     }
 
     100% {
-        background-color: hsl(200, 20%, 95%);
+        background-color: hsl(200, 20%, 90%);
     }
 }
 
@@ -260,7 +266,7 @@ footer {
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.35) -5px 5px 15px;
     padding: 3% 5%;
-    margin: 10vh 6% 0 6%;
+    margin: 6vh 6% 0 6%;
     display: flex;
 }
 
@@ -303,3 +309,21 @@ footer {
     width: 22vw;
     animation: astronautMove 10s infinite;
 }
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: spinner-animation 1s linear infinite;
+  }
+  
+  @keyframes spinner-animation {
+    0% {
+      box-shadow: -72px 0 #FFF inset;
+    }
+    100% {
+      box-shadow: 48px 0 #FFF inset;
+    }
+  }

@@ -15,7 +15,7 @@ const CardPicture = ({ starData, className }) => {
                 </button>
             )
         }
-        return <div>Loading...</div>
+        return <div>Incorrect data</div>
     };
 
     return (

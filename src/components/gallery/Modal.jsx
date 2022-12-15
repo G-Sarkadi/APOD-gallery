@@ -26,7 +26,7 @@ function Modal({ setOpenModal, modalContent }) {
                     <Picture starData={modalContent} className={"modalPicture"} />
                     <FormatedDate date={modalContent.date} />
                     <Credits starData={modalContent} />
-                    <p className="explanation">{modalContent.explanation}</p>
+                    <p className="modalText">{modalContent.explanation}</p>
                 </div>
                 <div className="footer">
                     <button className="navBtn" onClick={() => { setOpenModal(false) }}>
