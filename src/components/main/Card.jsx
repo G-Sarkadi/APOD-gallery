@@ -38,8 +38,8 @@ const Card = ({ date }) => {
             <Picture starData={starData} className={"mainPicture"} />
             <FormatedDate date={date} />
             <Credits starData={starData} />
-            <p className="starExplanation">
-                <strong>Explanation: </strong>{starData.explanation}
+            <p className="mainText">
+                {starData.explanation}
             </p>
         </div>
     )
