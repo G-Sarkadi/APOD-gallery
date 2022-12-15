@@ -9,8 +9,8 @@ const Gallery = () => {
     const [modalContent, setModalContent] = useState({});
     const [toggleRefresh, setToggleRefresh] = useState(false)
 
-    const numberOfCards = 20;
-    const URL = `/api?count=${numberOfCards}&thumbs=true`
+    const NUMBER_OF_CARDS = 20;
+    const URL = `/api?count=${NUMBER_OF_CARDS}&thumbs=true`
 
     useEffect(() => {
         const controller = new AbortController();
@@ -38,7 +38,7 @@ const Gallery = () => {
             {modalOpen && <Modal setOpenModal={setModalOpen} modalContent={modalContent} />}
             <div className="contentContainer">
                 <h3>Gallery</h3>
-                {cards ? <GalleryContainer galleryContent={cards} setModalOpen={setModalOpen} setModalContent={setModalContent} /> : <PlaceholderContainer />}
+                {cards ? <GalleryContainer galleryContent={cards} setModalOpen={setModalOpen} setModalContent={setModalContent} /> : <PlaceholderContainer numberOfCards={NUMBER_OF_CARDS}/>}
                 <button className="navBtn" onClick={()=> {setToggleRefresh(prev => !prev)}}>More random pictures</button>
             </div>
         </>
