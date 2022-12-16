@@ -1,7 +1,7 @@
 import Card from "./Card"
 import DateInput from "./DateInput"
-import { useEffect, useState } from "react";
-import { Spinner } from "react-bootstrap";
+import { useEffect, useState } from "react"
+import Spinner from "../Spinner";
 
 const Home = () => {
     const [selectedDate, setSelectedDate] = useState(calculateToday());
