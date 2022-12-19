@@ -30,9 +30,10 @@ const Home = () => {
         };
     }, [URL]);
 
+    // Create a new Date object, use East Coast Time, and parse it to a yyyy-mm-dd string
     function calculateToday() {
-        const newDate = new Date();
-        return `${newDate.getFullYear()}-${newDate.getMonth() + 1}-${newDate.getDate()}`;
+        const todayInFlorida = new Date();
+        return todayInFlorida.toLocaleDateString('en-CA', {timeZone:'EST'});
     }
 
     function isDataLoading() {
