@@ -16,7 +16,7 @@ const API_BASE_URL = process.env.REACT_APP_NASA_API_BASE_URL
 const API_KEY_NAME = process.env.REACT_APP_NASA_API_KEY_NAME
 const API_KEY_VALUE = process.env.REACT_APP_NASA_API_KEY_VALUE
 
-// Build options
+// Server options
 let options = {
     dotfiles: 'ignore',
     etag: false,
@@ -35,8 +35,7 @@ let cache = apiCache.middleware
 
 /* Cache only if there is no 'count' url parameter, thus on the /gallery page on
 every refresh it will fetch a batch of new random pictures */
-const noCountParameter = (req, res) => !req.query.count
-const conditionalCache = cache('2 minutes', noCountParameter)
+const conditionalCache = cache('2 minutes', (req, res) => !req.query.count)
 
 // Rate limiting, limits the requests for a given time
 const limiter = rateLimit({
@@ -49,7 +48,7 @@ app.set('trust proxy', 1)
 // Set static folder
 app.use(express.static('public'))
 
-// Route to fetch the data for the main page
+// Route to fetch the data for the main page and gallery
 app.get('/api', conditionalCache, async (req, res) => {
     try {
         const params = new URLSearchParams({
@@ -59,14 +58,14 @@ app.get('/api', conditionalCache, async (req, res) => {
 
         const apiRes = await needle('get', `${API_BASE_URL}?${params}`)
         const data = apiRes.body
-
+        
         res.status(200).json(data)
     } catch (error) {
         res.status(500).json({ error })
     }
 })
 
-// Route all requests to subpages to the main html -> React can handle in from that point
+// Route all requests to subpages to the main html -> React can handle it from that point
 app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
   });
