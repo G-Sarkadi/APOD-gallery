@@ -8,7 +8,7 @@ const FormatedDate = ({ date }) => {
         } else {
             dateObject = new Date(date + "z");
         }
-        
+
         return dateObject.getFullYear()
             + " "
             + dateObject.toLocaleDateString("en-GB", { month: "long" })

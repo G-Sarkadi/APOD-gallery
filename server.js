@@ -35,7 +35,7 @@ let cache = apiCache.middleware
 
 /* Cache only if there is no 'count' url parameter, thus on the /gallery page on
 every refresh it will fetch a batch of new random pictures */
-const conditionalCache = cache('2 minutes', (req, res) => !req.query.count)
+const conditionalCache = cache('2 minutes', (req, _res) => !req.query.count)
 
 // Rate limiting, limits the requests for a given time
 const limiter = rateLimit({

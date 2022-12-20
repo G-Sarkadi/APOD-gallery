@@ -6,7 +6,7 @@ const About = () => {
                 <img className="aboutImage" src="/aboutBackground.png" alt="astronaut" />
                 <div className="aboutTextContainer">
                     <h3>About</h3>
-                    <p>This is a variation of NASA's Astronomy Picture of the Day site.
+                    <p>This is a variation of NASA&apos;s Astronomy Picture of the Day site.
                         The main page shows the actual picture of the day and the gallery is a random selection
                         from previous days.
                     </p>

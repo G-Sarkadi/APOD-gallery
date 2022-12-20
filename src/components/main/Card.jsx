@@ -1,9 +1,8 @@
-import { useEffect } from "react"
 import FormatedDate from "../FormatedDate";
 import Credits from "../Credits";
 import Picture from "./CardPicture";
 
-const Card = ({ selectedDate, starData, setStarData }) => {
+const Card = ({ selectedDate, starData }) => {
 
     return (
         <div className="mainCard">

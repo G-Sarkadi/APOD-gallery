@@ -2,11 +2,11 @@ import { Outlet } from "react-router-dom"
 import Footer from "./Footer"
 import MyNavbar from "./MyNavbar"
 
-const Layout = (props) => {
+const Layout = ({ props }) => {
     return (
         <>
             <MyNavbar />
-            <Outlet />
+            <Outlet props={props} />
             <Footer />
         </>
     )
