@@ -16,7 +16,7 @@ const CardPicture = ({ starData, className }) => {
             )
         }
         return <div>Incorrect data</div>
-    };
+    }
 
     return (
         <>

@@ -38,8 +38,8 @@ const Gallery = () => {
             {modalOpen && <Modal setOpenModal={setModalOpen} modalContent={modalContent} />}
             <div className="contentContainer">
                 <h3>Gallery</h3>
-                {cards ? <GalleryContainer galleryContent={cards} setModalOpen={setModalOpen} setModalContent={setModalContent} /> : <PlaceholderContainer numberOfCards={NUMBER_OF_CARDS}/>}
-                <button className="navBtn" onClick={()=> {setToggleRefresh(prev => !prev)}}>More random pictures</button>
+                {cards ? <GalleryContainer galleryContent={cards} setModalOpen={setModalOpen} setModalContent={setModalContent} /> : <PlaceholderContainer numberOfCards={NUMBER_OF_CARDS} />}
+                <button className="navBtn" onClick={() => { setToggleRefresh(prev => !prev) }}>More random pictures</button>
             </div>
         </>
     )

@@ -33,7 +33,7 @@ const Home = () => {
     // Create a new Date object, use East Coast Time, and parse it to a yyyy-mm-dd string
     function calculateToday() {
         const todayInFlorida = new Date();
-        return todayInFlorida.toLocaleDateString('en-CA', {timeZone:'EST'});
+        return todayInFlorida.toLocaleDateString('en-CA', { timeZone: 'EST' });
     }
 
     function isDataLoading() {
@@ -47,7 +47,7 @@ const Home = () => {
             <div className="contentContainer">
                 {isDataLoading() ? <Spinner /> :
                     <>
-                        <Card starData={starData} setStarData={setStarData} selectedDate={selectedDate} />
+                        <Card starData={starData} selectedDate={selectedDate} />
                         <DateInput selectedDate={selectedDate} today={calculateToday()} setSelectedDate={setSelectedDate} setStarData={setStarData} />
                     </>
                 }
