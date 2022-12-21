@@ -58,8 +58,7 @@ app.get('/api', conditionalCache, async (req, res) => {
 
         const apiRes = await needle('get', `${API_BASE_URL}?${params}`)
         const data = apiRes.body
-        
-        res.status(200).json(data)
+        res.status(apiRes.statusCode).json(data)
     } catch (error) {
         res.status(500).json({ error })
     }

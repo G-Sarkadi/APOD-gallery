@@ -7,7 +7,7 @@ const DateInput = ({ selectedDate, today, setSelectedDate, setStarData }) => {
         <>
             <span>Select date: </span>
             <input type="date"
-                value={selectedDate ?? today}
+                value={selectedDate || today}
                 max={today}
                 min={earliestDate}
                 onChange={e => {
