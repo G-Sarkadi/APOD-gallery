@@ -51,21 +51,20 @@ app.use(express.static('public'))
 // Route to fetch the data for the main page and gallery
 app.get('/api', conditionalCache, async (req, res) => {
     try {
-        const params = new URLSearchParams({
+        const apiParameters = new URLSearchParams({
             [API_KEY_NAME]: API_KEY_VALUE,
             ...url.parse(req.url, true).query,
         })
 
-        const apiRes = await needle('get', `${API_BASE_URL}?${params}`)
-        const data = apiRes.body
-        res.status(apiRes.statusCode).json(data)
+        const apiResponse = await needle('get', `${API_BASE_URL}?${apiParameters}`)
+        res.status(apiResponse.statusCode).json(apiResponse.body)
     } catch (error) {
         res.status(500).json({ error })
     }
 })
 
 // Route all requests to subpages to the main html -> React can handle it from that point
-app.get('/*', function (req, res) {
+app.get('/*', function (_req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
   });
 

@@ -6,7 +6,7 @@ import Spinner from "../Spinner";
 const Home = () => {
     const [selectedDate, setSelectedDate] = useState("");
     const [starData, setStarData] = useState({});
-    const [today, setToday] = useState("");
+    const [latestDate, setLatestDate] = useState("");
     const [loading, setLoading] = useState(false)
 
     document.title = 'Astronomy Picture of the Day'
@@ -22,8 +22,8 @@ const Home = () => {
             const data = await res.json()
             setStarData(data)
             // Set the latest date with the first fetch
-            if (today === "") {
-                setToday(data.date)
+            if (latestDate === "") {
+                setLatestDate(data.date)
             }
             setLoading(false)
         }
@@ -42,8 +42,8 @@ const Home = () => {
             <div className="contentContainer">
                 {loading ? <Spinner /> :
                     <>
-                        <Card starData={starData} selectedDate={selectedDate || today} />
-                        <DateInput selectedDate={selectedDate} today={today} setSelectedDate={setSelectedDate} setStarData={setStarData} />
+                        <Card starData={starData} selectedDate={selectedDate || latestDate} />
+                        <DateInput selectedDate={selectedDate} latestDate={latestDate} setSelectedDate={setSelectedDate} setStarData={setStarData} />
                     </>
                 }
             </div>
