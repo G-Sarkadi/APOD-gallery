@@ -9,19 +9,19 @@ const Home = () => {
     const [today, setToday] = useState("");
     const [loading, setLoading] = useState(false)
 
-    const URL = `/api?date=${selectedDate || today}`
-
     document.title = 'Astronomy Picture of the Day'
 
     useEffect(() => {
         const controller = new AbortController();
         const signal = controller.signal;
+        const URL = `/api?date=${selectedDate}`
 
         async function fetchData() {
             setLoading(true)
             const res = await fetch(URL, { signal: signal })
             const data = await res.json()
             setStarData(data)
+            // Set the latest date with the first fetch
             if (today === "") {
                 setToday(data.date)
             }
@@ -35,7 +35,7 @@ const Home = () => {
             // cancel the request before component unmounts
             controller.abort();
         };
-    }, [URL]);
+    }, [selectedDate]);
 
     return (
         <>
