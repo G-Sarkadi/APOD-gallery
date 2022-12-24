@@ -217,7 +217,7 @@ footer {
     max-width: 95%;
     max-height: 85vh;
     border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.85);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
@@ -266,7 +266,7 @@ footer {
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.35) -5px 5px 15px;
     padding: 3% 5%;
-    margin: 6vh 6% 0 6%;
+    margin: 6vh 6% 6vh 6%;
     display: flex;
 }
 
@@ -274,7 +274,6 @@ footer {
     text-align: justify;
     font-size: 1.3em;
     margin-left: 5vw;
-    max-width: 50vw;
 }
 
 @keyframes astronautMove {
@@ -282,7 +281,8 @@ footer {
   }
 
 .aboutImage {
-    height: 50vh;
+    width: 25vw;
+    object-fit: scale-down;
     animation: astronautMove 10s infinite;
 }
 
@@ -297,12 +297,31 @@ footer {
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.35) -5px 5px 15px;
     padding: 3%;
-    width: 40vw;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     gap: 1vh;
     align-items: center;
     justify-content: center;
+}
+
+@media only screen and (max-width: 1000px) {
+    .errorContainer {
+      width: 80vw;
+    }
+
+    .aboutContainer {
+        flex-direction: column;
+    }
+
+    .aboutImage {
+        height: 40vh;
+        width: auto;
+    }
+
+    .aboutTextContainer {
+        margin-left: 0;
+    }
 }
 
 .errorImage {
