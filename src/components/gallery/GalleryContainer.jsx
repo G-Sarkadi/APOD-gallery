@@ -1,6 +1,7 @@
+import PlaceholderCard from "../PlaceholderCard"
 import GalleryCard from "./GalleryCard"
 
-const GalleryContainer = ({ galleryContent, setModalOpen, setModalContent }) => {
+const GalleryContainer = ({ galleryContent, setModalOpen, setModalContent, loading }) => {
 
     function createCards() {
         if (galleryContent) {
@@ -14,10 +15,18 @@ const GalleryContainer = ({ galleryContent, setModalOpen, setModalContent }) => 
         }
     }
 
+    function createPlaceholders() {
+        let placeholders = []
+        for (let i = 0; i < 20; i++) {
+            placeholders.push(<PlaceholderCard key={i} />)
+        }
+        return placeholders;
+    }
 
     return (
         <div className="galleryContainer">
             {createCards()}
+            {loading && createPlaceholders()}
         </div>
     )
 }
