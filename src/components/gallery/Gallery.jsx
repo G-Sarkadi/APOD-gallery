@@ -60,7 +60,7 @@ const Gallery = () => {
             {modalOpen && <Modal setOpenModal={setModalOpen} modalContent={modalContent} />}
             <div className="contentContainer">
                 <h3>Gallery</h3>
-                <GalleryContainer galleryContent={cards} setModalOpen={setModalOpen} setModalContent={setModalContent} loading={loading}/>
+                <GalleryContainer galleryContent={cards} setModalOpen={setModalOpen} setModalContent={setModalContent} loading={loading} numberOfCards={NUMBER_OF_CARDS}/>
             </div>
         </>
     )
