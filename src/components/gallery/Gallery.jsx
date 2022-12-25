@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import GalleryContainer from "./GalleryContainer"
-import PlaceholderContainer from "../PlaceholderContainer"
 import Modal from "./Modal"
 
 const Gallery = () => {
@@ -61,7 +60,7 @@ const Gallery = () => {
             {modalOpen && <Modal setOpenModal={setModalOpen} modalContent={modalContent} />}
             <div className="contentContainer">
                 <h3>Gallery</h3>
-                {cards ? <GalleryContainer galleryContent={cards} setModalOpen={setModalOpen} setModalContent={setModalContent} loading={loading}/> : <PlaceholderContainer numberOfCards={NUMBER_OF_CARDS} />}
+                <GalleryContainer galleryContent={cards} setModalOpen={setModalOpen} setModalContent={setModalContent} loading={loading}/>
             </div>
         </>
     )
