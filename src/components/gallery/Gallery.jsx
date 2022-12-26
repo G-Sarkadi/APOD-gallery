@@ -15,6 +15,19 @@ const Gallery = () => {
 
     document.title = 'Picture Gallery'
 
+    function checkValidity(content) {
+        /* Filter out videos without thumbnail URL, or empty string as thumbnail URL or other content (embedded html,
+        php, Adobe Flash, etc.) without thumbnails. Doesn't filter broken links. */
+        const isDataAnImage = content.media_type === "image" && content.url
+        const IsDataANewerVideoWithThumbnail = content.media_type === "video" && content.thumbnail_url && content.thumbnail_url !== ""
+        const IsDataAnOlderVideoWithThumbnail = content.media_type === "other" && content.thumbnail_url && content.thumbnail_url !== ""
+        const validity = isDataAnImage || IsDataANewerVideoWithThumbnail || IsDataAnOlderVideoWithThumbnail
+        if (!validity) {
+            console.warn(`The data of ${content.date} is not valid. (Video without thumbnail, embedded game, etc.)`)
+        }
+        return validity
+    }
+
     useEffect(() => {
         const controller = new AbortController();
         const signal = controller.signal;
@@ -23,11 +36,12 @@ const Gallery = () => {
         async function fetchData() {
             const res = await fetch(URL, { signal: signal })
             const data = await res.json()
+            const filteredData = data.filter(checkValidity)
             setCards(prevData => {
                 if (prevData) {
-                    return [...prevData, ...data]
+                    return [...prevData, ...filteredData]
                 }
-                return data
+                return filteredData
             })
             setLoading(false);
         }
