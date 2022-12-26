@@ -1,6 +1,6 @@
 import FormatedDate from "../FormatedDate";
 import Credits from "../Credits";
-import Picture from "./CardPicture";
+import CardPicture from "./CardPicture";
 
 const Card = ({ selectedDate, starData }) => {
 
@@ -9,7 +9,7 @@ const Card = ({ selectedDate, starData }) => {
             <h3 className="pictureTitle">
                 {starData.title}
             </h3>
-            <Picture starData={starData} className={"mainPicture"} />
+            <CardPicture starData={starData} className={"mainPicture"} />
             <FormatedDate date={selectedDate} />
             <Credits starData={starData} />
             <p className="mainText">
