@@ -1,5 +1,7 @@
 
 const About = () => {
+    document.title = 'About'
+    
     return (
         <div className="contentContainer">
             <div className="aboutContainer">
