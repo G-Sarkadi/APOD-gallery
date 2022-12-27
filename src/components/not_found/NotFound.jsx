@@ -1,6 +1,7 @@
 import NavButton from "../NavButton";
 
 const NotFound = () => {
+    document.title = 'Something went wrong'
 
     return (
         <>

@@ -265,7 +265,7 @@ footer {
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.35) -5px 5px 15px;
     padding: 3% 5%;
-    margin: 5vh 6% 4vh 6%;
+    margin: 4vh 6% 4vh 6%;
     display: flex;
 }
 
@@ -304,7 +304,7 @@ footer {
     justify-content: center;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 992px) {
     .errorContainer {
       width: 80vw;
     }
@@ -320,6 +320,24 @@ footer {
 
     .aboutTextContainer {
         margin-left: 0;
+    }
+
+    .mainPicture {
+        width: 90vw;
+    }
+
+    .aboutContainer {
+        margin-top: 2vh;
+    }
+
+    .errorContainer  .errorImage {
+        width: 50vw;
+    }
+}
+
+@media only screen and (max-width: 385px){
+    .navbar .navbar-brand {
+        font-size: 1rem;
     }
 }
 
