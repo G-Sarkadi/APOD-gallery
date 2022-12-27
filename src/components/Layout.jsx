@@ -1,12 +1,15 @@
 import { Outlet } from "react-router-dom"
 import Footer from "./Footer"
 import MyNavbar from "./MyNavbar"
+import { Suspense } from "react"
 
 const Layout = ({ props }) => {
     return (
         <>
             <MyNavbar />
-            <Outlet props={props} />
+            <Suspense>
+                <Outlet props={props} />
+            </Suspense>
             <Footer />
         </>
     )

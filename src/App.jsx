@@ -1,10 +1,12 @@
 import './App.css';
 import Home from './components/main/Home';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Gallery from './components/gallery/Gallery';
 import Layout from './components/Layout';
-import NotFound from './components/not_found/NotFound';
-import About from './components/about/About';
+import { lazy } from 'react'
+
+const Gallery = lazy(()=> import('./components/gallery/Gallery'))
+const About = lazy(() => import('./components/about/About'))
+const NotFound = lazy(() => import('./components/not_found/NotFound'))
 
 function App() {
     return (
