@@ -1,5 +1,5 @@
 import LoadingError from "../LoadingError"
-import PlaceholderCard from "../PlaceholderCard"
+import PlaceholderCard from "./PlaceholderCard"
 import GalleryCard from "./GalleryCard"
 
 const GalleryContainer = ({ galleryContent, setModalOpen, setModalContent, loading, numberOfCards, loadingError }) => {

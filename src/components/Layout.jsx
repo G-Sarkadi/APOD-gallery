@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom"
 import Footer from "./Footer"
-import MyNavbar from "./MyNavbar"
+import CustomNavbar from "./CustomNavbar"
 import { Suspense } from "react"
 
 const Layout = ({ props }) => {
     return (
         <>
-            <MyNavbar />
+            <CustomNavbar />
             <Suspense fallback={<div className="contentContainer"></div>}>
                 <Outlet props={props} />
             </Suspense>

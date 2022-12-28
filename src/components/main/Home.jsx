@@ -1,14 +1,14 @@
 import Card from "./Card"
 import DateInput from "./DateInput"
 import { useEffect, useState } from "react"
-import Spinner from "../Spinner";
+import Spinner from "./Spinner";
 import LoadingError from "../LoadingError";
 
 const Home = () => {
     const [selectedDate, setSelectedDate] = useState("");
     const [starData, setStarData] = useState({});
     const [latestDate, setLatestDate] = useState("");
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [loadingError, setLoadingError] = useState(false);
 
     document.title = 'Astronomy Picture of the Day'

@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
-const MyNavbar = () => {
+const CustomNavbar = () => {
     return (
         <Navbar collapseOnSelect fixed="top" bg="dark" variant="dark" expand="lg" >
             <Container fluid>
@@ -19,4 +19,4 @@ const MyNavbar = () => {
     )
 }
 
-export default MyNavbar
+export default CustomNavbar
