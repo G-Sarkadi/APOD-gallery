@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import GalleryContainer from "./GalleryContainer"
 import Modal from "./Modal"
+import useScroll from './useScroll'
 
 const Gallery = () => {
     const [cards, setCards] = useState();
@@ -56,29 +57,20 @@ const Gallery = () => {
         };
     }, [URL, toggleRefresh]);
 
-    useEffect(() => {
-        // Triggers a new fetch if there isn't a running one and the user scrolls below 80% of the viewport
-        if (!loading) {
-            const onScroll = () => {
-                const scrollTop = document.documentElement.scrollTop
-                const scrollHeight = document.documentElement.scrollHeight
-                const clientHeight = document.documentElement.clientHeight
-                if (scrollTop + clientHeight >= scrollHeight * VIEWPORT_PERCENT_TO_TRIGGER_NEW_FETCH) {
-                    setToggleRefresh(prev => !prev)
-                }
-            }
-
-            window.addEventListener('scroll', onScroll)
-            return () => window.removeEventListener('scroll', onScroll)
-        }
-    }, [loading])
+    // Triggers a new fetch if there isn't a running one and the user scrolls below the given percent of the viewport
+    useScroll(loading, setToggleRefresh, VIEWPORT_PERCENT_TO_TRIGGER_NEW_FETCH);
 
     return (
         <>
             {modalOpen && <Modal setOpenModal={setModalOpen} modalContent={modalContent} />}
             <div className="contentContainer">
                 <h3>Gallery</h3>
-                <GalleryContainer galleryContent={cards} setModalOpen={setModalOpen} setModalContent={setModalContent} loading={loading} numberOfCards={NUMBER_OF_CARDS} loadingError={loadingError} />
+                <GalleryContainer galleryContent={cards}
+                    setModalOpen={setModalOpen}
+                    setModalContent={setModalContent}
+                    loading={loading}
+                    numberOfCards={NUMBER_OF_CARDS}
+                    loadingError={loadingError} />
             </div>
         </>
     )
