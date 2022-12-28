@@ -7,7 +7,7 @@ const GalleryCard = ({ content, setModalOpen, setModalContent }) => {
             setModalOpen(true);
             setModalContent(content)
         }}>
-            <GalleryCardPicture content={content} setModalContent={setModalContent} setModalOpen={setModalOpen} />
+            <GalleryCardPicture content={content} />
             <div className="galleryCardFooter">
                 {content.title}
             </div>
