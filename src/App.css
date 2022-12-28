@@ -311,6 +311,15 @@ footer {
     justify-content: center;
 }
 
+.errorImage {
+    width: 22vw;
+    animation: astronautMove 10s infinite;
+}
+
+.loadingErrorMessage {
+    margin-top: 40vh;
+}
+
 @media only screen and (max-width: 992px) {
     .errorContainer {
       width: 80vw;
@@ -350,11 +359,6 @@ footer {
     .navbar .navbar-brand {
         font-size: 1rem;
     }
-}
-
-.errorImage {
-    width: 22vw;
-    animation: astronautMove 10s infinite;
 }
 
 .spinnerContainer {

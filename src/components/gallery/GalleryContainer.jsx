@@ -1,7 +1,8 @@
+import LoadingError from "../LoadingError"
 import PlaceholderCard from "../PlaceholderCard"
 import GalleryCard from "./GalleryCard"
 
-const GalleryContainer = ({ galleryContent, setModalOpen, setModalContent, loading, numberOfCards }) => {
+const GalleryContainer = ({ galleryContent, setModalOpen, setModalContent, loading, numberOfCards, loadingError }) => {
 
     function createCards() {
         if (galleryContent) {
@@ -16,16 +17,20 @@ const GalleryContainer = ({ galleryContent, setModalOpen, setModalContent, loadi
     }
 
     function createPlaceholders() {
-        return Array(numberOfCards).fill("placeholder").map((_value, index) => 
+        return Array(numberOfCards).fill("placeholder").map((_value, index) =>
             <PlaceholderCard key={index} />
         )
     }
 
     return (
-        <div className="galleryContainer">
-            {createCards()}
-            {loading && createPlaceholders()}
-        </div>
+        <>
+            {loadingError ?
+                <LoadingError /> :
+                <div className="galleryContainer">
+                    {createCards()}
+                    {loading && createPlaceholders()}
+                </div>}
+        </>
     )
 }
 

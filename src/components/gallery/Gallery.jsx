@@ -8,6 +8,7 @@ const Gallery = () => {
     const [modalContent, setModalContent] = useState({});
     const [toggleRefresh, setToggleRefresh] = useState(false);
     const [loading, setLoading] = useState(true);
+    const [loadingError, setLoadingError] = useState(false);
 
     const NUMBER_OF_CARDS = 20;
     const URL = `/api?count=${NUMBER_OF_CARDS}&thumbs=true`
@@ -27,10 +28,14 @@ const Gallery = () => {
     useEffect(() => {
         const controller = new AbortController();
         const signal = controller.signal;
-        setLoading(true)
 
         async function fetchData() {
+            setLoading(true)
+            setLoadingError(false)
             const res = await fetch(URL, { signal: signal })
+            if (!res.ok) {
+                setLoadingError(true)
+            }
             const data = await res.json()
             const filteredData = data.filter(checkValidity)
             setCards(prevData => {
@@ -43,7 +48,7 @@ const Gallery = () => {
         }
 
         fetchData()
-            .catch(console.error);
+            .catch(err => console.error(err))
 
         return () => {
             // cancel the request before component unmounts
@@ -71,7 +76,7 @@ const Gallery = () => {
             {modalOpen && <Modal setOpenModal={setModalOpen} modalContent={modalContent} />}
             <div className="contentContainer">
                 <h3>Gallery</h3>
-                <GalleryContainer galleryContent={cards} setModalOpen={setModalOpen} setModalContent={setModalContent} loading={loading} numberOfCards={NUMBER_OF_CARDS} />
+                <GalleryContainer galleryContent={cards} setModalOpen={setModalOpen} setModalContent={setModalContent} loading={loading} numberOfCards={NUMBER_OF_CARDS} loadingError={loadingError}/>
             </div>
         </>
     )

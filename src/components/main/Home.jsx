@@ -2,12 +2,14 @@ import Card from "./Card"
 import DateInput from "./DateInput"
 import { useEffect, useState } from "react"
 import Spinner from "../Spinner";
+import LoadingError from "../LoadingError";
 
 const Home = () => {
     const [selectedDate, setSelectedDate] = useState("");
     const [starData, setStarData] = useState({});
     const [latestDate, setLatestDate] = useState("");
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+    const [loadingError, setLoadingError] = useState(false);
 
     document.title = 'Astronomy Picture of the Day'
 
@@ -18,7 +20,11 @@ const Home = () => {
 
         async function fetchData() {
             setLoading(true)
+            setLoadingError(false)
             const res = await fetch(URL, { signal: signal })
+            if (!res.ok) {
+                setLoadingError(true)
+            }
             const data = await res.json()
             setStarData(data)
             // Set the latest date with the first fetch
@@ -29,7 +35,7 @@ const Home = () => {
         }
 
         fetchData()
-            .catch(console.error)
+            .catch(err => console.error(err))
 
         return () => {
             // cancel the request before component unmounts
@@ -40,11 +46,13 @@ const Home = () => {
     return (
         <>
             <div className="contentContainer">
-                {loading ? <Spinner /> :
-                    <>
-                        <Card starData={starData} selectedDate={selectedDate || latestDate} />
-                        <DateInput selectedDate={selectedDate} latestDate={latestDate} setSelectedDate={setSelectedDate} setStarData={setStarData} />
-                    </>
+                {loadingError ?
+                    <LoadingError /> :
+                    loading ? <Spinner /> :
+                        <>
+                            <Card starData={starData} selectedDate={selectedDate || latestDate} />
+                            <DateInput selectedDate={selectedDate} latestDate={latestDate} setSelectedDate={setSelectedDate} setStarData={setStarData} />
+                        </>
                 }
             </div>
         </>
