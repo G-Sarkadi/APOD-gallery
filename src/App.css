@@ -215,7 +215,6 @@ footer {
 }
 
 .modalContainer {
-    overflow: auto;
     margin-top: 8vh;
     max-width: 95%;
     max-height: 85vh;
@@ -227,10 +226,14 @@ footer {
     padding: 20px;
 }
 
-.modalTitle {
+.modalHeader {
     display: flex;
     justify-content:space-between;
-    align-items: center;
+    align-items:center;
+}
+
+.modalContent {
+    overflow: auto;
 }
 
 .closingXButton {

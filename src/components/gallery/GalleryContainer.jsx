@@ -16,11 +16,9 @@ const GalleryContainer = ({ galleryContent, setModalOpen, setModalContent, loadi
     }
 
     function createPlaceholders() {
-        let placeholders = []
-        for (let i = 0; i < numberOfCards; i++) {
-            placeholders.push(<PlaceholderCard key={i} />)
-        }
-        return placeholders;
+        return Array(numberOfCards).fill("placeholder").map((_value, index) => 
+            <PlaceholderCard key={index} />
+        )
     }
 
     return (

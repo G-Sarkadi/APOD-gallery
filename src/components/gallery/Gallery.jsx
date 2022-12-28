@@ -21,11 +21,7 @@ const Gallery = () => {
         const isDataAnImage = content.media_type === "image" && content.url
         const IsDataANewerVideoWithThumbnail = content.media_type === "video" && content.thumbnail_url && content.thumbnail_url !== ""
         const IsDataAnOlderVideoWithThumbnail = content.media_type === "other" && content.thumbnail_url && content.thumbnail_url !== ""
-        const validity = isDataAnImage || IsDataANewerVideoWithThumbnail || IsDataAnOlderVideoWithThumbnail
-        if (!validity) {
-            console.warn(`The data of ${content.date} is not valid. (Video without thumbnail, embedded game, etc.)`)
-        }
-        return validity
+        return isDataAnImage || IsDataANewerVideoWithThumbnail || IsDataAnOlderVideoWithThumbnail
     }
 
     useEffect(() => {
