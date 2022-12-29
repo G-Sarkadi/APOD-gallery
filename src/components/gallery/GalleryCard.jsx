@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import GalleryCardPicture from "./GalleryCardPicture";
+import { ModalContext } from "./Gallery";
 
-const GalleryCard = ({ content, setModalOpen, setModalContent }) => {
+const GalleryCard = ({ content }) => {
+    const {setModalOpen,setModalContent} = useContext(ModalContext)
 
     return (
         <div className="galleryCard" onClick={() => {

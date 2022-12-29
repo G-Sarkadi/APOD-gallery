@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 import GalleryContainer from "./GalleryContainer"
 import Modal from "./Modal"
 import useScroll from './useScroll'
+
+export const ModalContext = createContext();
 
 const Gallery = () => {
     const [cards, setCards] = useState();
@@ -61,18 +63,16 @@ const Gallery = () => {
     useScroll(loading, setToggleRefresh, VIEWPORT_PERCENT_TO_TRIGGER_NEW_FETCH);
 
     return (
-        <>
-            {modalOpen && <Modal setOpenModal={setModalOpen} modalContent={modalContent} />}
+        <ModalContext.Provider value={{ setModalContent, modalContent, setModalOpen }}>
+            {modalOpen && <Modal />}
             <div className="contentContainer">
                 <h3>Gallery</h3>
                 <GalleryContainer galleryContent={cards}
-                    setModalOpen={setModalOpen}
-                    setModalContent={setModalContent}
                     loading={loading}
                     numberOfCards={NUMBER_OF_CARDS}
                     loadingError={loadingError} />
             </div>
-        </>
+        </ModalContext.Provider>
     )
 }
 
