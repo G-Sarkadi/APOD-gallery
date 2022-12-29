@@ -2,22 +2,17 @@ import LoadingError from "../LoadingError"
 import PlaceholderCard from "./PlaceholderCard"
 import GalleryCard from "./GalleryCard"
 
-const GalleryContainer = ({ galleryContent, setModalOpen, setModalContent, loading, numberOfCards, loadingError }) => {
+const GalleryContainer = ({ galleryContent, loading, numberOfCards, loadingError }) => {
 
     function createCards() {
         if (galleryContent) {
             return galleryContent.map((content, index) =>
-                <GalleryCard
-                    content={content}
-                    key={index}
-                    setModalOpen={setModalOpen}
-                    setModalContent={setModalContent}
-                />)
+                <GalleryCard content={content} key={index} />)
         }
     }
 
     function createPlaceholders() {
-        return Array(numberOfCards).fill("placeholder").map((_value, index) =>
+        return Array(numberOfCards).fill().map((_value, index) =>
             <PlaceholderCard key={index} />
         )
     }
