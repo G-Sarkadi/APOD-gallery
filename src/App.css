@@ -33,7 +33,7 @@ footer {
     max-height: 80vh;
     max-width: 80vw;
     border-radius: 10px;
-    object-fit: contain;
+    object-fit: cover;
     border: 1px solid rgba(0, 0, 0, 0);
     margin-bottom: 1vh;
 }
@@ -51,7 +51,7 @@ footer {
 .mainPicture {
     max-height: 80vh;
     border-radius: 10px;
-    object-fit: contain;
+    object-fit: cover;
     border: 1px solid rgba(0, 0, 0, 0);
     margin-bottom: 1vh;
 }
