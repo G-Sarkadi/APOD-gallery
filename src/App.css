@@ -34,13 +34,11 @@ footer {
     max-width: 80vw;
     border-radius: 10px;
     object-fit: cover;
-    border: 1px solid rgba(0, 0, 0, 0);
     margin-bottom: 1vh;
 }
 
 .modalImage:hover {
     cursor: pointer;
-    border: 1px solid #777;
 }
 
 .modalText {
@@ -50,15 +48,13 @@ footer {
 
 .mainImage {
     max-height: 80vh;
-    border-radius: 10px;
+    border-radius: 15px;
     object-fit: cover;
-    border: 1px solid rgba(0, 0, 0, 0);
     margin-bottom: 1vh;
 }
 
 .mainImage:hover {
     cursor: pointer;
-    border: 1px solid #777;
 }
 
 .imageTitle {
