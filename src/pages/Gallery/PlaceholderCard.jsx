@@ -1,8 +1,7 @@
-
 const PlaceholderCard = () => {
     return (
         <div className="galleryCard placeholderCard">
-            <div className="galleryCardPicture"></div>
+            <div className="galleryCardImage"></div>
         </div>
     )
 }

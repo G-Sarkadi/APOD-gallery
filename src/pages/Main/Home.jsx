@@ -2,7 +2,7 @@ import Card from "./Card"
 import DateInput from "./DateInput"
 import { useEffect, useState } from "react"
 import Spinner from "./Spinner";
-import LoadingError from "../LoadingError";
+import LoadingError from "../../components/LoadingError";
 
 const Home = () => {
     const [selectedDate, setSelectedDate] = useState("");
@@ -50,8 +50,12 @@ const Home = () => {
                     <LoadingError /> :
                     loading ? <Spinner /> :
                         <>
-                            <Card starData={starData} selectedDate={selectedDate || latestDate} />
-                            <DateInput selectedDate={selectedDate} latestDate={latestDate} setSelectedDate={setSelectedDate} setStarData={setStarData} />
+                            <Card starData={starData}
+                                selectedDate={selectedDate || latestDate} />
+                            <DateInput selectedDate={selectedDate}
+                                latestDate={latestDate}
+                                setSelectedDate={setSelectedDate}
+                                setStarData={setStarData} />
                         </>
                 }
             </div>

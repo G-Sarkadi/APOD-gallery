@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import FormatedDate from "../FormatedDate";
-import Picture from "../main/CardPicture";
 import ReactDom from 'react-dom'
-import Credits from "../Credits";
+import Credits from "../../components/Credits";
 import { ModalContext } from "./Gallery";
+import FormatedDate from "../../components/FormatedDate";
+import MainImage from "../../components/MainImage";
 
 function Modal() {
     const { setModalOpen, modalContent } = useContext(ModalContext);
@@ -22,7 +22,7 @@ function Modal() {
                 </div>
                 <div className="modalContent">
                     <div className="body">
-                        <Picture starData={modalContent} className={"modalPicture"} />
+                        <MainImage starData={modalContent} className={"modalImage"} />
                         <FormatedDate date={modalContent.date} />
                         <Credits starData={modalContent} />
                         <p className="modalText">{modalContent.explanation}</p>

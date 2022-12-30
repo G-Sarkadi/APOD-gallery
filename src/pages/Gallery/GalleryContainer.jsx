@@ -1,4 +1,4 @@
-import LoadingError from "../LoadingError"
+import LoadingError from "../../components/LoadingError"
 import PlaceholderCard from "./PlaceholderCard"
 import GalleryCard from "./GalleryCard"
 

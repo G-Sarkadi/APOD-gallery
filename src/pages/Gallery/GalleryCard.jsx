@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import GalleryCardPicture from "./GalleryCardPicture";
+import GalleryCardImage from "./GalleryCardImage";
 import { ModalContext } from "./Gallery";
 
 const GalleryCard = ({ content }) => {
@@ -10,7 +10,7 @@ const GalleryCard = ({ content }) => {
             setModalOpen(true);
             setModalContent(content)
         }}>
-            <GalleryCardPicture content={content} />
+            <GalleryCardImage content={content} />
             <div className="galleryCardFooter">
                 {content.title}
             </div>

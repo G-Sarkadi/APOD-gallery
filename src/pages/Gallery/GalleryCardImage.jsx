@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-const GalleryCardPicture = ({ content }) => {
-    const [className, setClassName] = useState("galleryCardPicture loading");
+const GalleryCardImage = ({ content }) => {
+    const [className, setClassName] = useState("galleryCardImage loading");
 
     const changeStyle = () => {
-        setClassName("galleryCardPicture");
+        setClassName("galleryCardImage");
     };
 
     return (
@@ -17,4 +17,4 @@ const GalleryCardPicture = ({ content }) => {
     )
 }
 
-export default GalleryCardPicture
+export default GalleryCardImage

@@ -29,7 +29,7 @@ footer {
     height: 25px;
 }
 
-.modalPicture {
+.modalImage {
     max-height: 80vh;
     max-width: 80vw;
     border-radius: 10px;
@@ -38,7 +38,7 @@ footer {
     margin-bottom: 1vh;
 }
 
-.modalPicture:hover {
+.modalImage:hover {
     cursor: pointer;
     border: 1px solid #777;
 }
@@ -48,7 +48,7 @@ footer {
     margin-top: 0;
 }
 
-.mainPicture {
+.mainImage {
     max-height: 80vh;
     border-radius: 10px;
     object-fit: cover;
@@ -56,21 +56,21 @@ footer {
     margin-bottom: 1vh;
 }
 
-.mainPicture:hover {
+.mainImage:hover {
     cursor: pointer;
     border: 1px solid #777;
 }
 
-.pictureTitle {
+.imageTitle {
     margin-bottom: 2vh;
 }
 
-.pictureButton {
+.imageButton {
     border: 0;
     background-color: rgba(0, 0, 0, 0);
 }
 
-.starVideo {
+.video {
     width: 960px;
     height: 540px;
     margin-bottom: 1vh;
@@ -135,7 +135,7 @@ footer {
     cursor: pointer;
 }
 
-.galleryCardPicture {
+.galleryCardImage {
     visibility: visible;
     width: 100%;
     max-height: 400px;
@@ -144,7 +144,7 @@ footer {
     object-position: center;
 }
 
-.galleryCardPicture.loading {
+.galleryCardImage.loading {
     visibility: hidden;
 }
 
@@ -162,7 +162,7 @@ footer {
     cursor:wait;
 }
 
-.galleryCardPicture, .galleryCardFooter {
+.galleryCardImage, .galleryCardFooter {
     transition: var(--transition-speed) transform ease-in-out;
 }
 
@@ -183,7 +183,7 @@ footer {
     align-items: flex-start;
 }
 
-.galleryCard:hover > .galleryCardPicture {
+.galleryCard:hover > .galleryCardImage {
     transform: scale(1.025);
 }
 
@@ -338,7 +338,7 @@ footer {
         margin-left: 0;
     }
 
-    .mainPicture {
+    .mainImage {
         width: 90vw;
     }
 
