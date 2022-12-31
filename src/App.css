@@ -58,7 +58,7 @@ footer {
 }
 
 .mainImage, .modalImage {
-    transition: 300ms box-shadow ease-in-out;
+    transition: 200ms box-shadow ease-in-out;
 }
 
 .imageTitle {
