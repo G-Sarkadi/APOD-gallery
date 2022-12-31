@@ -1,19 +1,19 @@
 import FormatedDate from "../../components/FormatedDate";
 import Credits from "../../components/Credits";
-import MainImage from "../../components/MainImage";
+import MainImage from "./MainImage";
 
-const Card = ({ selectedDate, starData }) => {
+const Card = ({ selectedDate, content }) => {
 
     return (
         <div className="mainCard">
             <h3 className="imageTitle">
-                {starData.title}
+                {content.title}
             </h3>
-            <MainImage starData={starData} className={"mainImage"} />
+            <MainImage content={content} />
             <FormatedDate date={selectedDate} />
-            <Credits starData={starData} />
+            <Credits content={content} />
             <p className="mainText">
-                {starData.explanation}
+                {content.explanation}
             </p>
         </div>
     )

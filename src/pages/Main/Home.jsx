@@ -1,12 +1,12 @@
 import Card from "./Card"
 import DateInput from "./DateInput"
 import { useEffect, useState } from "react"
-import Spinner from "./Spinner";
+import Spinner from "../../components/Spinner";
 import LoadingError from "../../components/LoadingError";
 
 const Home = () => {
     const [selectedDate, setSelectedDate] = useState("");
-    const [starData, setStarData] = useState({});
+    const [content, setContent] = useState({});
     const [latestDate, setLatestDate] = useState("");
     const [loading, setLoading] = useState(true);
     const [loadingError, setLoadingError] = useState(false);
@@ -26,7 +26,7 @@ const Home = () => {
                 setLoadingError(true)
             }
             const data = await res.json()
-            setStarData(data)
+            setContent(data)
             // Set the latest date with the first fetch
             if (latestDate === "") {
                 setLatestDate(data.date)
@@ -50,12 +50,12 @@ const Home = () => {
                     <LoadingError /> :
                     loading ? <Spinner /> :
                         <>
-                            <Card starData={starData}
+                            <Card content={content}
                                 selectedDate={selectedDate || latestDate} />
                             <DateInput selectedDate={selectedDate}
                                 latestDate={latestDate}
                                 setSelectedDate={setSelectedDate}
-                                setStarData={setStarData} />
+                                setContent={setContent} />
                         </>
                 }
             </div>
