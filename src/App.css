@@ -30,6 +30,7 @@ footer {
 }
 
 .mainImage {
+    visibility: visible;
     max-height: 80vh;
     border-radius: 15px;
     object-fit: cover;
@@ -59,6 +60,10 @@ footer {
 
 .mainImage, .modalImage {
     transition: 200ms box-shadow ease-in-out;
+}
+
+.mainImage.loading {
+    visibility: hidden;
 }
 
 .imageTitle {

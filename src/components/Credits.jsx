@@ -1,7 +1,7 @@
-const Credits = ({ starData }) => {
+const Credits = ({ content }) => {
     return (
         <div className="imageCredit">
-            {starData.copyright ? `Image Credit & Copyright: ${starData.copyright}` : 'Image Credit: NASA'}
+            {content.copyright ? `Image Credit & Copyright: ${content.copyright}` : 'Image Credit: NASA'}
         </div>
     )
 }
