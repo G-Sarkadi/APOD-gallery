@@ -4,17 +4,18 @@ const ModalImage = ({ content }) => {
     };
 
     function showProperTypeOfMedia() {
-        if (content.media_type === "video") {
-            return <iframe src={content.url} title={content.title} className="video"></iframe>
+        switch (content.media_type) {
+            case "video":
+                return <iframe src={content.url} title={content.title} className="video"></iframe>
+            case "image":
+                return (
+                    <button className="imageButton" onClick={() => openInNewTab(content.hdurl || content.url)}>
+                        <img src={content.url} alt={content.title} className="modalImage" />
+                    </button>
+                )
+            default:
+                return <div>Incorrect data</div>
         }
-        if (content.media_type === "image") {
-            return (
-                <button className="imageButton" onClick={() => openInNewTab(content.hdurl ?? content.url)}>
-                    <img src={content.url} alt={content.title} className="modalImage" />
-                </button>
-            )
-        }
-        return <div>Incorrect data</div>
     }
 
     return (
