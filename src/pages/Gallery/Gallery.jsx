@@ -7,7 +7,6 @@ export const ModalContext = createContext();
 
 const Gallery = () => {
     const [cards, setCards] = useState();
-    const [modalOpen, setModalOpen] = useState(false);
     const [modalContent, setModalContent] = useState({});
     const [toggleRefresh, setToggleRefresh] = useState(false);
     const [loading, setLoading] = useState(true);
@@ -15,7 +14,7 @@ const Gallery = () => {
 
     const NUMBER_OF_CARDS = 20;
     const URL = `/api?count=${NUMBER_OF_CARDS}&thumbs=true`
-    const VIEWPORT_PERCENT_TO_TRIGGER_NEW_FETCH = 0.8
+    const VIEWPORT_RATIO_TO_TRIGGER_NEW_FETCH = 0.8
 
     document.title = 'Picture Gallery'
 
@@ -57,14 +56,14 @@ const Gallery = () => {
             // cancel the request before component unmounts
             controller.abort();
         };
-    }, [URL, toggleRefresh]);
+    }, [toggleRefresh]);
 
-    // Triggers a new fetch if there isn't a running one and the user scrolls below the given percent of the viewport
-    useScroll(loading, setToggleRefresh, VIEWPORT_PERCENT_TO_TRIGGER_NEW_FETCH);
+    // Triggers a new fetch if there isn't a running one and the user scrolls below the given ratio of the viewport
+    useScroll(loading, setToggleRefresh, VIEWPORT_RATIO_TO_TRIGGER_NEW_FETCH);
 
     return (
-        <ModalContext.Provider value={{ setModalContent, modalContent, setModalOpen }}>
-            {modalOpen && <Modal />}
+        <ModalContext.Provider value={{ modalContent, setModalContent }}>
+            {Object.keys(modalContent).length !== 0 && <Modal />}
             <div className="contentContainer">
                 <h3>Gallery</h3>
                 <GalleryContainer galleryContent={cards}

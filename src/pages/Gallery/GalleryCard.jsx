@@ -3,13 +3,10 @@ import GalleryCardImage from "./GalleryCardImage";
 import { ModalContext } from "./Gallery";
 
 const GalleryCard = ({ content }) => {
-    const {setModalOpen,setModalContent} = useContext(ModalContext)
+    const { setModalContent } = useContext(ModalContext)
 
     return (
-        <div className="galleryCard" onClick={() => {
-            setModalOpen(true);
-            setModalContent(content)
-        }}>
+        <div className="galleryCard" onClick={() => setModalContent(content)}>
             <GalleryCardImage content={content} />
             <div className="galleryCardFooter">
                 {content.title}
