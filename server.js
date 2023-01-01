@@ -11,12 +11,10 @@ const PORT = process.env.PORT || 5000
 
 const app = express()
 
-// Enviroment variables
 const API_BASE_URL = process.env.REACT_APP_NASA_API_BASE_URL
 const API_KEY_NAME = process.env.REACT_APP_NASA_API_KEY_NAME
 const API_KEY_VALUE = process.env.REACT_APP_NASA_API_KEY_VALUE
 
-// Server options
 let options = {
     dotfiles: 'ignore',
     etag: false,
@@ -27,17 +25,13 @@ let options = {
   }
   app.use(express.static('build', options))
 
-// Enable cors
 app.use(cors())
-
-// Initialize cache
-let cache = apiCache.middleware
 
 /* Cache only if there is no 'count' url parameter, thus on the /gallery page on
 every refresh it will fetch a batch of new random pictures */
+let cache = apiCache.middleware
 const conditionalCache = cache('2 minutes', (req, _res) => !req.query.count)
 
-// Rate limiting, limits the requests for a given time
 const limiter = rateLimit({
     windowMS: 60 * 60 * 1000, // 1 hour
     max: 1000
@@ -45,7 +39,6 @@ const limiter = rateLimit({
 app.use(limiter)
 app.set('trust proxy', 1)
 
-// Set static folder
 app.use(express.static('public'))
 
 // Route to fetch the data for the main page and gallery
