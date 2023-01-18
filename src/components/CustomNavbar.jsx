@@ -9,9 +9,9 @@ const CustomNavbar = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto" variant="pills" defaultActiveKey="/">
-                        <Nav.Link className="px-3" as={NavLink} to="/" eventKey="0" >Home</Nav.Link>
-                        <Nav.Link className="px-3" as={NavLink} to="/gallery" eventKey="1">Gallery</Nav.Link>
-                        <Nav.Link className="px-3" as={NavLink} to="/about" eventKey="2">About</Nav.Link>
+                        <Nav.Link className="px-3" as={NavLink} to="/">Home</Nav.Link>
+                        <Nav.Link className="px-3" as={NavLink} to="/gallery">Gallery</Nav.Link>
+                        <Nav.Link className="px-3" as={NavLink} to="/about">About</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
